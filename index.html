@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Partner Payout Tracker Sumatera</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
  
@@ -73,7 +74,6 @@ body {
   -webkit-font-smoothing: antialiased;
 }
  
-/* ─── TOPBAR ─── */
 .topbar {
   background: var(--ink);
   height: 58px;
@@ -120,7 +120,6 @@ body {
  
 .main { padding: 2rem 1.75rem 3rem; max-width: 1440px; margin: 0 auto; }
  
-/* ─── MODE SELECTOR ─── */
 .mode-screen {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
@@ -151,7 +150,6 @@ body {
   max-width: 420px; font-size: 13px; color: var(--warn); text-align: center;
 }
  
-/* ─── LANDING / UPLOAD ─── */
 .landing { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 2rem 0 4rem; }
 @media (max-width: 900px) { .landing { grid-template-columns: 1fr; gap: 2rem; } }
 .landing-left .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
@@ -176,7 +174,6 @@ body {
 .upload-card input { display: none; }
 .error-msg { margin-top: 14px; background: var(--bad-bg); color: var(--bad); padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px; justify-content: center; }
  
-/* ─── LOADED PREVIEW ─── */
 .loaded-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-top: 16px; }
 .loaded-card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.015em; }
 .loaded-meta { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
@@ -186,7 +183,6 @@ body {
 .stat-box .sl { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
 .loaded-actions { display: flex; gap: 8px; flex-wrap: wrap; }
  
-/* ─── PUBLISHED BAR ─── */
 .published-bar {
   background: var(--good-bg); border: 1px solid var(--good);
   border-radius: 12px; padding: 14px 18px; margin-bottom: 1.5rem;
@@ -199,7 +195,6 @@ body {
 .pub-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--good); opacity: 0.8; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; }
 .published-bar-right { display: flex; gap: 8px; }
  
-/* ─── BUTTONS ─── */
 .btn { padding: 8px 16px; font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer; border: 1px solid transparent; font-family: inherit; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; }
 .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
 .btn-primary:hover { background: var(--primary-dark); }
@@ -210,7 +205,6 @@ body {
 .btn-reset { padding: 7px 12px; font-size: 12px; background: transparent; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
 .btn-reset:hover { color: var(--bad); border-color: var(--bad); }
  
-/* ─── VIEWER HERO ─── */
 .viewer-hero { padding: 1rem 0 1.75rem; }
 .viewer-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
 .viewer-hero .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--primary); }
@@ -218,7 +212,6 @@ body {
 .viewer-hero h2 em { font-style: italic; color: var(--primary); }
 .last-update { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
  
-/* ─── TAB NAV ─── */
 .tab-nav { display: flex; align-items: center; gap: 4px; margin-bottom: 1.25rem; border-bottom: 1px solid var(--line); padding-bottom: 0; }
 .tab-btn { padding: 10px 18px; font-size: 13px; font-weight: 500; font-family: inherit; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--muted); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; margin-bottom: -1px; }
 .tab-btn:hover { color: var(--ink); }
@@ -228,7 +221,6 @@ body {
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
  
-/* ─── FILTERS ─── */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 1.25rem; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .filters-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; display: flex; align-items: center; gap: 6px; padding-right: 4px; border-right: 1px solid var(--line); margin-right: 2px; }
 .filters select, .search-input { padding: 7px 28px 7px 12px; font-size: 13px; border: 1px solid var(--line-2); border-radius: 8px; background-color: var(--surface); color: var(--ink); font-family: inherit; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b716e' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; background-size: 12px; transition: border-color 0.15s; }
@@ -237,7 +229,6 @@ body {
 .search-input:focus { border-color: var(--primary); }
 .spacer { flex: 1; }
  
-/* ─── KPIs ─── */
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
 .kpi { background: var(--surface); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--line); transition: transform 0.15s, box-shadow 0.15s; }
 .kpi:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
@@ -251,7 +242,6 @@ body {
 .kpi .kpi-value { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
 .kpi .kpi-sub { font-size: 11.5px; color: var(--muted); margin-top: 5px; font-family: 'JetBrains Mono', monospace; }
  
-/* ─── CARDS & GRID ─── */
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: box-shadow 0.15s; }
 .card:hover { box-shadow: var(--shadow); }
 .card-head { padding: 14px 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
@@ -262,7 +252,6 @@ body {
 .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 1.5rem; }
 @media (max-width: 1000px) { .grid-2, .grid-2-eq { grid-template-columns: 1fr; } }
  
-/* ─── FUNNEL ─── */
 .funnel-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
 @media (max-width: 700px) { .funnel-container { grid-template-columns: 1fr; } }
 .funnel-legend { display: flex; flex-direction: column; gap: 4px; }
@@ -284,7 +273,6 @@ body {
 .pd-month { color: var(--ink-2); font-weight: 500; }
 .pd-count { color: var(--bad); font-weight: 700; }
  
-/* ─── DONUT ─── */
 .donut-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .donut-svg { width: 100%; max-width: 200px; height: 200px; }
 .donut-legend { width: 100%; display: flex; flex-direction: column; gap: 4px; }
@@ -313,10 +301,8 @@ body {
 .unpaid-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-align: right; white-space: nowrap; }
 .unpaid-meta .unpaid-amount { display: block; color: var(--ink); font-weight: 600; font-size: 10.5px; margin-top: 1px; }
  
-/* ─── TREND ─── */
 .trend-svg { width: 100%; height: 240px; }
  
-/* ─── HEATMAP ─── */
 .heatmap-wrap { overflow-x: auto; }
 .heatmap-table { width: 100%; border-collapse: separate; border-spacing: 3px; }
 .heatmap-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 8px; font-weight: 500; text-align: center; }
@@ -329,7 +315,6 @@ body {
 .heatmap-cell.empty { background: var(--surface-2); color: var(--muted-2); }
 .heatmap-cell.empty .val { font-size: 12px; font-weight: 400; }
  
-/* ─── BOTTLENECK ─── */
 .bn-list { display: flex; flex-direction: column; gap: 12px; }
 .bn-row { display: flex; flex-direction: column; gap: 4px; }
 .bn-row-top { display: flex; justify-content: space-between; align-items: center; }
@@ -341,7 +326,6 @@ body {
 .bn-period-info { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; padding: 8px 12px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; gap: 8px; border-left: 3px solid var(--primary); }
 .bn-period-info strong { color: var(--primary); font-weight: 700; text-transform: none; letter-spacing: 0; font-size: 11px; }
  
-/* ─── TOP PARTNERS ─── */
 .tp-list { display: flex; flex-direction: column; gap: 12px; }
 .tp-row { display: flex; flex-direction: column; gap: 5px; }
 .tp-row-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -353,7 +337,6 @@ body {
 .tp-bar { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
 .tp-bar-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width 0.4s; }
  
-/* ─── DATA TABLE ─── */
 .tbl-card { background: var(--surface); border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
 .tbl-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--line); gap: 12px; flex-wrap: wrap; }
 .tbl-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); letter-spacing: -0.015em; }
@@ -381,14 +364,12 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 .raw-status-badge.s-other { background: var(--surface-2); color: var(--muted); }
 .empty-cell { color: var(--muted-2); font-style: italic; font-size: 10.5px; }
  
-/* ─── PCT BADGE ─── */
 .pct { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
 .dot-ico { width: 17px; height: 17px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .pct.g { color: var(--good); } .pct.g .dot-ico { background: var(--good); }
 .pct.a { color: var(--warn); } .pct.a .dot-ico { background: var(--warn); }
 .pct.r { color: var(--bad); } .pct.r .dot-ico { background: var(--bad); }
  
-/* ─── MISC ─── */
 .empty-blk { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 13px; }
 .dash-footer { margin-top: 2rem; padding: 1.25rem 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-top: 1px solid var(--line); }
 .toast { position: fixed; bottom: 28px; right: 28px; background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500; z-index: 999; opacity: 0; transform: translateY(10px); transition: all 0.25s; pointer-events: none; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; max-width: 360px; }
@@ -396,6 +377,24 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 .toast.success { background: var(--primary); }
 .toast.error { background: var(--bad); }
 .hidden { display: none !important; }
+ 
+.loading-overlay {
+  position: fixed; inset: 0; background: rgba(15,20,25,0.55);
+  display: flex; align-items: center; justify-content: center;
+  z-index: 9999; backdrop-filter: blur(4px);
+}
+.loading-box {
+  background: var(--surface); padding: 28px 36px; border-radius: 14px;
+  display: flex; flex-direction: column; align-items: center; gap: 14px;
+  box-shadow: var(--shadow-lg);
+}
+.spinner {
+  width: 38px; height: 38px; border: 3px solid var(--line);
+  border-top-color: var(--primary); border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+.loading-text { font-size: 13px; color: var(--ink-2); font-weight: 500; }
+@keyframes spin { to { transform: rotate(360deg); } }
  
 @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.4s ease-out backwards; }
@@ -419,7 +418,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
   <div class="topbar-logo">PP</div>
   <div>
     <div class="topbar-title">Partner Payout Tracker Sumatera</div>
-    <div class="topbar-sub">· Payout Dashboard</div>
+    <div class="topbar-sub">· Payout Dashboard · Cloud Sync</div>
   </div>
   <div class="topbar-right">
     <span class="mode-badge hidden" id="mode-badge"></span>
@@ -437,14 +436,12 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
  
 <div class="main">
  
-  <!-- ══════════════════════════════════════════
-       SCREEN 1: MODE SELECTOR
-  ══════════════════════════════════════════ -->
+  <!-- SCREEN 1: MODE SELECTOR -->
   <div id="screen-mode" class="mode-screen">
     <div>
       <div class="mode-eyebrow">Selamat Datang</div>
       <h1>Pilih <em>peran</em> kamu</h1>
-      <p style="margin-top:10px;">Admin mengupload & mengelola data. Viewer melihat dashboard yang sudah disiapkan — tanpa perlu upload file.</p>
+      <p style="margin-top:10px;">Admin mengupload & mengelola data. Viewer melihat dashboard yang sudah disiapkan — tanpa perlu upload file. Data tersimpan di cloud dan otomatis sync antar device.</p>
     </div>
     <div class="mode-cards">
       <div class="mode-card" onclick="enterAdmin()">
@@ -469,12 +466,9 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
     </div>
   </div>
  
-  <!-- ══════════════════════════════════════════
-       SCREEN 2: ADMIN
-  ══════════════════════════════════════════ -->
+  <!-- SCREEN 2: ADMIN -->
   <div id="screen-admin" class="hidden">
  
-    <!-- Published bar -->
     <div id="admin-published-bar" class="published-bar hidden">
       <div class="published-bar-left">
         <div class="pub-icon">
@@ -497,16 +491,15 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       </div>
     </div>
  
-    <!-- Upload area -->
     <div class="landing" id="admin-upload-area">
       <div class="landing-left">
         <div class="eyebrow">Admin Area — Upload Data</div>
         <h1>Upload data <em>payout</em><br>untuk semua viewer.</h1>
-        <p>Setelah upload & publish, siapapun yang membuka link ini akan langsung melihat dashboard tanpa perlu upload ulang. Data tersimpan secara permanen.</p>
+        <p>Setelah upload & publish, siapapun yang membuka link ini akan langsung melihat dashboard tanpa perlu upload ulang. Data tersimpan di cloud Supabase dan otomatis sync ke semua viewer di device manapun.</p>
         <div class="feature-list">
           <div class="feature-item">
             <span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
-            Upload sekali — semua viewer langsung melihat dashboard
+            Upload sekali — semua viewer di device manapun langsung melihat
           </div>
           <div class="feature-item">
             <span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>
@@ -542,7 +535,6 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
           <div id="upload-error" class="error-msg hidden"></div>
         </div>
  
-        <!-- Preview setelah file terbaca -->
         <div id="loaded-info" class="loaded-card hidden">
           <h3 id="loaded-filename"></h3>
           <div class="loaded-meta" id="loaded-meta"></div>
@@ -550,7 +542,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
           <div class="loaded-actions">
             <button class="btn btn-primary" onclick="publishData()">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
-              Publish ke Viewer
+              Publish ke Cloud
             </button>
             <button class="btn btn-outline" onclick="resetUploadUI()">Ganti File</button>
             <button class="btn btn-outline" onclick="previewDashboard()">
@@ -563,9 +555,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
     </div>
   </div>
  
-  <!-- ══════════════════════════════════════════
-       SCREEN 3: DASHBOARD (Viewer & Admin preview)
-  ══════════════════════════════════════════ -->
+  <!-- SCREEN 3: DASHBOARD -->
   <div id="screen-dashboard" class="hidden">
  
     <div class="viewer-hero">
@@ -606,7 +596,6 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       </button>
     </div>
  
-    <!-- Dashboard Tab -->
     <div class="tab-pane active" id="dashboard-tab">
       <div class="kpis" id="kpis"></div>
       <div class="grid-2">
@@ -642,13 +631,12 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       <div class="tbl-card" id="tbl-card"></div>
     </div>
  
-    <!-- Raw Data Tab -->
     <div class="tab-pane" id="rawdata-tab">
       <div class="tbl-card" id="rawdata-card"></div>
     </div>
  
     <div class="dash-footer">
-      Partner Payout Tracker Sumatera · Data tersimpan &amp; dibagikan ke semua viewer · All computations client-side
+      Partner Payout Tracker Sumatera · Data tersinkron via Supabase Cloud · All computations client-side
     </div>
   </div>
  
@@ -656,11 +644,27 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
  
 <div class="toast" id="toast"></div>
  
-<!-- ══════════════════════════════════════════
-     JAVASCRIPT
-══════════════════════════════════════════ -->
+<div id="loading-overlay" class="loading-overlay hidden">
+  <div class="loading-box">
+    <div class="spinner"></div>
+    <div class="loading-text" id="loading-text">Memuat data...</div>
+  </div>
+</div>
+ 
 <script>
-// ─── STATE ───
+// ═══════════════════════════════════════════════════════════════
+// SUPABASE CONFIGURATION
+// ═══════════════════════════════════════════════════════════════
+const SUPABASE_URL = 'https://xktdiasnxnajwlaqyaxq.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhrdGRpYXNueG5handsYXF5YXhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3OTYxMTMsImV4cCI6MjA5MzM3MjExM30.aBlvJ2Pp6-BTnvXFJGP3jTmhE9ZVQeMB9ggBVKy69oU';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+ 
+// GANTI PASSWORD ADMIN DI BAWAH INI dengan password yang kamu mau
+const ADMIN_PASSWORD = 'admin123';
+ 
+// ═══════════════════════════════════════════════════════════════
+// STATE
+// ═══════════════════════════════════════════════════════════════
 var S = {
   rawRows: [], fileName: '', mode: null,
   aggregated: [], rawDetails: [],
@@ -671,7 +675,9 @@ var S = {
   activeTab: 'dashboard-tab', currentMode: null,
 };
  
-// ─── HELPERS ───
+// ═══════════════════════════════════════════════════════════════
+// HELPERS
+// ═══════════════════════════════════════════════════════════════
 function $(id) { return document.getElementById(id); }
 function esc(s) { if (s === null || s === undefined) return ''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
 function ea(s) { if (s === null || s === undefined) return ''; return String(s).replace(/&/g,'&amp;').replace(/"/g,'&quot;').replace(/'/g,'&#039;').replace(/</g,'&lt;'); }
@@ -684,6 +690,11 @@ function toast(msg, type) {
   t.innerHTML = ico + '<span>' + msg + '</span>';
   setTimeout(function() { t.classList.remove('show'); }, 3200);
 }
+function showLoading(text) {
+  $('loading-text').textContent = text || 'Memuat data...';
+  $('loading-overlay').classList.remove('hidden');
+}
+function hideLoading() { $('loading-overlay').classList.add('hidden'); }
 function unique(arr) { return arr.filter(function(v, i, a) { return a.indexOf(v) === i; }); }
 function gv(id) { var e = $(id); return e ? e.value : ''; }
 function debounceRender() { clearTimeout(S.debounceTimer); S.debounceTimer = setTimeout(render, 180); }
@@ -754,86 +765,116 @@ function sumAgg(rows) {
   }, { partner:0, po:0, surat:0, invoice:0, clv:0, clearing:0, amount:0 });
 }
  
-// ─── SCREEN MANAGEMENT ───
+// ═══════════════════════════════════════════════════════════════
+// SCREEN MANAGEMENT
+// ═══════════════════════════════════════════════════════════════
 function showScreen(id) {
   ['screen-mode','screen-admin','screen-dashboard'].forEach(function(s) { $(s).classList.add('hidden'); });
   $(id).classList.remove('hidden');
 }
  
-// ─── STORAGE: Simpan ke localStorage (persistent di browser yang sama) ───
-// NOTE: Untuk berbagi antar user/device yang berbeda, gunakan server/database.
-// Dalam konteks Claude artifact, window.storage digunakan jika tersedia,
-// fallback ke localStorage.
- 
-var STORAGE_KEY = 'payout_tracker_data_v1';
- 
+// ═══════════════════════════════════════════════════════════════
+// SUPABASE STORAGE FUNCTIONS
+// ═══════════════════════════════════════════════════════════════
 async function saveToStorage(payload) {
   try {
-    var json = JSON.stringify(payload);
-    // Coba window.storage dulu (Claude artifact persistent storage)
-    if (typeof window !== 'undefined' && window.storage && typeof window.storage.set === 'function') {
-      var r = await window.storage.set(STORAGE_KEY, json);
-      return !!r;
-    }
-    // Fallback ke localStorage
-    localStorage.setItem(STORAGE_KEY, json);
+    // Hapus data lama dulu (kita selalu simpan 1 record terbaru saja)
+    await supabaseClient.from('payout_data').delete().neq('id', 0);
+ 
+    // Insert data baru
+    const { error } = await supabaseClient.from('payout_data').insert({
+      file_name: payload.fileName,
+      row_count: payload.rowCount,
+      published_at: payload.publishedAt,
+      raw_data: payload.rawRows,
+      mode: payload.mode,
+    });
+ 
+    if (error) throw error;
     return true;
   } catch (e) {
     console.error('Save error:', e);
-    toast('Gagal menyimpan: ' + e.message, 'error');
+    toast('Gagal menyimpan ke cloud: ' + e.message, 'error');
     return false;
   }
 }
  
 async function loadFromStorage() {
   try {
-    if (typeof window !== 'undefined' && window.storage && typeof window.storage.get === 'function') {
-      var r = await window.storage.get(STORAGE_KEY);
-      if (r && r.value) return JSON.parse(r.value);
-      return null;
-    }
-    var raw = localStorage.getItem(STORAGE_KEY);
-    return raw ? JSON.parse(raw) : null;
+    const { data, error } = await supabaseClient
+      .from('payout_data')
+      .select('*')
+      .order('created_at', { ascending: false })
+      .limit(1)
+      .maybeSingle();
+ 
+    if (error) throw error;
+    if (!data) return null;
+ 
+    return {
+      fileName: data.file_name,
+      rowCount: data.row_count,
+      publishedAt: data.published_at,
+      rawRows: data.raw_data,
+      mode: data.mode,
+    };
   } catch (e) {
     console.error('Load error:', e);
+    toast('Gagal memuat data dari cloud: ' + e.message, 'error');
     return null;
   }
 }
  
 async function deleteFromStorage() {
   try {
-    if (typeof window !== 'undefined' && window.storage && typeof window.storage.delete === 'function') {
-      await window.storage.delete(STORAGE_KEY);
-    } else {
-      localStorage.removeItem(STORAGE_KEY);
-    }
-    return true;
-  } catch (e) { return false; }
+    const { error } = await supabaseClient.from('payout_data').delete().neq('id', 0);
+    return !error;
+  } catch (e) {
+    return false;
+  }
 }
  
-// ─── MODE: ADMIN ───
+// ═══════════════════════════════════════════════════════════════
+// MODE: ADMIN
+// ═══════════════════════════════════════════════════════════════
 async function enterAdmin() {
+  // Password gate
+  var input = prompt('Masukkan password admin:');
+  if (input === null) return;
+  if (input !== ADMIN_PASSWORD) {
+    toast('Password salah', 'error');
+    return;
+  }
+ 
   S.currentMode = 'admin';
   var badge = $('mode-badge');
   badge.textContent = 'Admin'; badge.className = 'mode-badge admin'; badge.classList.remove('hidden');
   $('btn-switch-mode').classList.remove('hidden');
   showScreen('screen-admin');
  
+  showLoading('Memuat data dari cloud...');
   var saved = await loadFromStorage();
+  hideLoading();
+ 
   if (saved && saved.rawRows && saved.rawRows.length) {
     $('admin-published-bar').classList.remove('hidden');
     $('pub-meta').textContent = 'File: ' + (saved.fileName||'—') + ' · ' + saved.rowCount + ' baris · Dipublish: ' + saved.publishedAt;
   }
 }
  
-// ─── MODE: VIEWER ───
+// ═══════════════════════════════════════════════════════════════
+// MODE: VIEWER
+// ═══════════════════════════════════════════════════════════════
 async function enterViewer() {
   S.currentMode = 'viewer';
   var badge = $('mode-badge');
   badge.textContent = 'Viewer'; badge.className = 'mode-badge viewer'; badge.classList.remove('hidden');
   $('btn-switch-mode').classList.remove('hidden');
  
+  showLoading('Memuat data dari cloud...');
   var saved = await loadFromStorage();
+  hideLoading();
+ 
   if (!saved || !saved.rawRows || !saved.rawRows.length) {
     $('viewer-no-data').classList.remove('hidden');
     return;
@@ -842,7 +883,9 @@ async function enterViewer() {
   showScreen('screen-dashboard');
 }
  
-// ─── SWITCH MODE ───
+// ═══════════════════════════════════════════════════════════════
+// SWITCH MODE
+// ═══════════════════════════════════════════════════════════════
 $('btn-switch-mode').onclick = function() {
   S.currentMode = null;
   $('mode-badge').classList.add('hidden');
@@ -850,9 +893,13 @@ $('btn-switch-mode').onclick = function() {
   $('viewer-no-data').classList.add('hidden');
   $('filters').style.display = 'none';
   showScreen('screen-mode');
+  // Re-check storage badge
+  initBadges();
 };
  
-// ─── FILE UPLOAD ───
+// ═══════════════════════════════════════════════════════════════
+// FILE UPLOAD
+// ═══════════════════════════════════════════════════════════════
 function onDrag(e, on) { e.preventDefault(); $('upload-card').classList.toggle('drag', on); }
 function handleDrop(e) { e.preventDefault(); onDrag(e, false); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); }
  
@@ -876,9 +923,20 @@ function handleFile(file) {
       }
       S.rawRows = XLSX.utils.sheet_to_json(ws, { defval: null, range: hdrIdx });
       if (!S.rawRows.length) { showUploadErr('Sheet kosong atau format tidak dikenali'); return; }
+ 
+      // Convert Date objects to ISO strings for JSON serialization
+      S.rawRows = S.rawRows.map(function(row) {
+        var clean = {};
+        Object.keys(row).forEach(function(k) {
+          var v = row[k];
+          if (v instanceof Date) { clean[k] = v.toISOString(); }
+          else { clean[k] = v; }
+        });
+        return clean;
+      });
+ 
       detectMode();
  
-      // Tampilkan preview
       var t = sumAgg(S.aggregated);
       $('loaded-filename').textContent = file.name;
       $('loaded-meta').textContent = wb.SheetNames.length + ' sheet · ' + S.rawRows.length.toLocaleString() + ' baris · '
@@ -909,7 +967,9 @@ function resetUploadUI() {
   S.rawRows = []; S.aggregated = []; S.rawDetails = []; S.mode = null;
 }
  
-// ─── PUBLISH DATA ───
+// ═══════════════════════════════════════════════════════════════
+// PUBLISH DATA
+// ═══════════════════════════════════════════════════════════════
 async function publishData() {
   if (!S.rawRows.length) { toast('Tidak ada data', 'error'); return; }
   var payload = {
@@ -919,28 +979,28 @@ async function publishData() {
     rawRows: S.rawRows,
     mode: S.mode,
   };
-  toast('Menyimpan data...');
+  showLoading('Mengupload data ke cloud...');
   var ok = await saveToStorage(payload);
+  hideLoading();
   if (ok) {
     $('admin-published-bar').classList.remove('hidden');
     $('pub-meta').textContent = 'File: ' + S.fileName + ' · ' + S.rawRows.length.toLocaleString() + ' baris · ' + payload.publishedAt;
     resetUploadUI();
-    toast('Data berhasil dipublish! Viewer dapat langsung melihat dashboard.', 'success');
+    toast('Data berhasil dipublish ke cloud! Semua viewer dapat melihat.', 'success');
   }
 }
  
-// ─── VIEW DASHBOARD (dari Admin) ───
-function viewDashboard() {
-  loadSavedThenShow();
-}
- 
-async function loadSavedThenShow() {
+// ═══════════════════════════════════════════════════════════════
+// VIEW DASHBOARD (dari Admin)
+// ═══════════════════════════════════════════════════════════════
+async function viewDashboard() {
+  showLoading('Memuat data...');
   var saved = await loadFromStorage();
+  hideLoading();
   if (saved && saved.rawRows && saved.rawRows.length) {
     loadSavedData(saved);
     showScreen('screen-dashboard');
   } else if (S.rawRows.length) {
-    // Pakai data yang baru di-load
     buildFilters(); render();
     $('rawdata-count').textContent = S.rawRows.length.toLocaleString();
     showScreen('screen-dashboard');
@@ -957,16 +1017,22 @@ function previewDashboard() {
   showScreen('screen-dashboard');
 }
  
-// ─── CLEAR DATA ───
+// ═══════════════════════════════════════════════════════════════
+// CLEAR DATA
+// ═══════════════════════════════════════════════════════════════
 async function clearData() {
   if (!confirm('Hapus semua data yang sudah dipublish? Viewer tidak akan bisa melihat dashboard.')) return;
+  showLoading('Menghapus data...');
   await deleteFromStorage();
+  hideLoading();
   $('admin-published-bar').classList.add('hidden');
   $('pub-meta').textContent = '';
-  toast('Data berhasil dihapus');
+  toast('Data berhasil dihapus', 'success');
 }
  
-// ─── LOAD SAVED DATA ───
+// ═══════════════════════════════════════════════════════════════
+// LOAD SAVED DATA
+// ═══════════════════════════════════════════════════════════════
 function loadSavedData(saved) {
   S.fileName = saved.fileName || '';
   S.rawRows = saved.rawRows || [];
@@ -984,7 +1050,9 @@ function loadSavedData(saved) {
   if (saved.publishedAt) $('last-update-label').textContent = 'Data per: ' + saved.publishedAt + ' · File: ' + S.fileName;
 }
  
-// ─── DATA DETECTION ───
+// ═══════════════════════════════════════════════════════════════
+// DATA DETECTION
+// ═══════════════════════════════════════════════════════════════
 function detectMode() {
   if (!S.rawRows.length) { S.mode = null; return; }
   var sample = S.rawRows[0];
@@ -1049,7 +1117,9 @@ function buildAggFromAggregated(rows) {
   return out;
 }
  
-// ─── FILTERS ───
+// ═══════════════════════════════════════════════════════════════
+// FILTERS
+// ═══════════════════════════════════════════════════════════════
 function buildFilters() {
   var months   = unique(S.aggregated.map(function(r){ return r.month; }).filter(Boolean)).sort(function(a,b){ return monthKey(a)-monthKey(b); });
   var entities = unique(S.aggregated.map(function(r){ return r.entity; }).filter(Boolean)).sort();
@@ -1106,7 +1176,9 @@ function getFiltered() {
   return { agg: agg, raw: raw };
 }
  
-// ─── TAB ───
+// ═══════════════════════════════════════════════════════════════
+// TAB
+// ═══════════════════════════════════════════════════════════════
 function switchTab(tabId, btnEl) {
   S.activeTab = tabId;
   document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
@@ -1116,7 +1188,9 @@ function switchTab(tabId, btnEl) {
   if (tabId === 'rawdata-tab') renderRawDataTable();
 }
  
-// ─── RENDER ───
+// ═══════════════════════════════════════════════════════════════
+// RENDER
+// ═══════════════════════════════════════════════════════════════
 function render() {
   var data = getFiltered();
   var t = sumAgg(data.agg), total = sumAgg(S.aggregated);
@@ -1133,7 +1207,9 @@ function render() {
   if (S.activeTab === 'rawdata-tab') renderRawDataTable();
 }
  
-// ─── KPIs ───
+// ═══════════════════════════════════════════════════════════════
+// KPIs
+// ═══════════════════════════════════════════════════════════════
 function renderKPIs(data) {
   var t = sumAgg(data.agg);
   var months = unique(data.agg.map(function(r){ return r.month; }).filter(Boolean)).length;
@@ -1162,7 +1238,9 @@ function renderKPIs(data) {
   }).join('');
 }
  
-// ─── FUNNEL ───
+// ═══════════════════════════════════════════════════════════════
+// FUNNEL
+// ═══════════════════════════════════════════════════════════════
 var STAGE_HINTS = { po:['po number','po #'], surat:['surat pemberitahuan','surat'], invoice:['invoice submission','invoice'], clv:['clv date','clv'], clearing:['clearing date','clearing'] };
  
 function getStageDropByMonth(stageKey, data) {
@@ -1221,7 +1299,9 @@ function renderFunnel(data) {
   $('funnel-body').innerHTML = '<div class="funnel-container">' + svg + legend + '</div>';
 }
  
-// ─── DONUT ───
+// ═══════════════════════════════════════════════════════════════
+// DONUT
+// ═══════════════════════════════════════════════════════════════
 function isUnpaidStatus(n) {
   if (!n) return true;
   var s = String(n).toLowerCase();
@@ -1291,7 +1371,9 @@ function renderDonut(data) {
   $('donut-body').innerHTML = '<div class="donut-wrap">' + svg + legend + '</div>';
 }
  
-// ─── TREND ───
+// ═══════════════════════════════════════════════════════════════
+// TREND
+// ═══════════════════════════════════════════════════════════════
 function renderTrend(agg) {
   if (!agg.length) { $('trend-body').innerHTML = emptyBlk(); return; }
   var months = unique(agg.map(function(r){ return r.month; }).filter(Boolean)).sort(function(a,b){ return monthKey(a)-monthKey(b); });
@@ -1315,7 +1397,9 @@ function renderTrend(agg) {
     +'</div>';
 }
  
-// ─── HEATMAP ───
+// ═══════════════════════════════════════════════════════════════
+// HEATMAP
+// ═══════════════════════════════════════════════════════════════
 function heatColor(p) {
   if (p===null||p===undefined) return '#e5e8e5';
   if (p>=95) return '#0d5d48'; if (p>=85) return '#15803d'; if (p>=70) return '#65a30d';
@@ -1343,7 +1427,9 @@ function renderHeatmap(agg) {
     + '</div><span>0% → 100%</span></div>';
 }
  
-// ─── BOTTLENECK ───
+// ═══════════════════════════════════════════════════════════════
+// BOTTLENECK
+// ═══════════════════════════════════════════════════════════════
 function renderBottleneck(raw) {
   if (!raw.length) { $('bottleneck-body').innerHTML = emptyBlk(); return; }
   var allMonths = unique(raw.map(function(r){ return gstr(r,['program date','month','bulan','periode']); }).filter(Boolean)).sort(function(a,b){ return monthKey(b)-monthKey(a); });
@@ -1373,7 +1459,9 @@ function renderBottleneck(raw) {
     + '</div>';
 }
  
-// ─── TOP PARTNERS ───
+// ═══════════════════════════════════════════════════════════════
+// TOP PARTNERS
+// ═══════════════════════════════════════════════════════════════
 function renderTopPartners(raw) {
   if (!raw.length) { $('top-partners-body').innerHTML = emptyBlk(); return; }
   var agg = {};
@@ -1393,7 +1481,9 @@ function renderTopPartners(raw) {
   }).join('') + '</div>';
 }
  
-// ─── SUMMARY TABLE ───
+// ═══════════════════════════════════════════════════════════════
+// SUMMARY TABLE
+// ═══════════════════════════════════════════════════════════════
 var COLS = [
   { key:'month',       label:'Program Date', align:'left' },
   { key:'entity',      label:'Entity',       align:'left' },
@@ -1461,7 +1551,9 @@ function toggleAllMonths() {
 }
 function sortBy(col) { if(S.sort.col===col)S.sort.dir=S.sort.dir==='asc'?'desc':'asc'; else{S.sort.col=col;S.sort.dir='desc';} render(); }
  
-// ─── RAW DATA TABLE ───
+// ═══════════════════════════════════════════════════════════════
+// RAW DATA TABLE
+// ═══════════════════════════════════════════════════════════════
 function getRawCols() {
   if (!S.rawRows.length) return [];
   var keys = Object.keys(S.rawRows[0]);
@@ -1552,7 +1644,9 @@ function exportRawData() {
   toast('Raw data diunduh!','success');
 }
  
-// ─── EXPORT ───
+// ═══════════════════════════════════════════════════════════════
+// EXPORT
+// ═══════════════════════════════════════════════════════════════
 function doExport(format) {
   var data=getFiltered(); if(!data.agg.length){toast('Tidak ada data','error');return;}
   var stamp=new Date().toISOString().slice(0,10);
@@ -1571,7 +1665,9 @@ function doExport(format) {
   }
 }
  
-// ─── THEME & MISC ───
+// ═══════════════════════════════════════════════════════════════
+// THEME & MISC
+// ═══════════════════════════════════════════════════════════════
 document.documentElement.setAttribute('data-theme','light');
 $('btn-theme').onclick = function() {
   var cur=document.documentElement.getAttribute('data-theme');
@@ -1579,20 +1675,26 @@ $('btn-theme').onclick = function() {
 };
 $('btn-print').onclick = function() { window.print(); };
  
-// ─── INIT: cek storage saat halaman dibuka ───
-(async function init() {
+// ═══════════════════════════════════════════════════════════════
+// INIT
+// ═══════════════════════════════════════════════════════════════
+async function initBadges() {
   try {
     var saved = await loadFromStorage();
     if (saved && saved.rawRows && saved.rawRows.length) {
-      // Tampilkan badge di mode selector
       var vb = $('viewer-card-badge');
       vb.textContent = 'Data tersedia — ' + saved.rowCount.toLocaleString() + ' baris';
       vb.classList.remove('hidden');
       var ab = $('admin-card-badge');
       ab.classList.remove('hidden');
+    } else {
+      $('viewer-card-badge').classList.add('hidden');
+      $('admin-card-badge').classList.add('hidden');
     }
-  } catch(e) { /* ignore */ }
-})();
+  } catch(e) { console.error('Init error:', e); }
+}
+ 
+initBadges();
 </script>
 </body>
 </html>
