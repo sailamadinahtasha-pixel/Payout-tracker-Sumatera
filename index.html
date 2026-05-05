@@ -8,7 +8,7 @@
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
- 
+
 :root {
   --primary: #0d5d48;
   --primary-dark: #074936;
@@ -36,7 +36,7 @@
   --shadow: 0 1px 3px rgba(15,20,25,0.06), 0 1px 2px rgba(15,20,25,0.04);
   --shadow-lg: 0 10px 25px -8px rgba(15,20,25,0.12), 0 4px 10px -4px rgba(15,20,25,0.08);
 }
- 
+
 [data-theme="dark"] {
   --primary: #2d9473;
   --primary-dark: #1f7559;
@@ -61,7 +61,7 @@
   --info: #38bdf8;
   --info-bg: #0c1e2e;
 }
- 
+
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html, body { height: 100%; }
 body {
@@ -73,7 +73,7 @@ body {
   transition: background 0.3s, color 0.3s;
   -webkit-font-smoothing: antialiased;
 }
- 
+
 .topbar {
   background: var(--ink);
   height: 58px;
@@ -117,9 +117,9 @@ body {
   transition: all 0.15s;
 }
 .topbar-btn:hover { background: rgba(255,255,255,0.12); color: #fff; }
- 
+
 .main { padding: 2rem 1.75rem 3rem; max-width: 1440px; margin: 0 auto; }
- 
+
 .mode-screen {
   display: flex; flex-direction: column;
   align-items: center; justify-content: center;
@@ -149,7 +149,7 @@ body {
   border-radius: 10px; padding: 12px 18px;
   max-width: 420px; font-size: 13px; color: var(--warn); text-align: center;
 }
- 
+
 .landing { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: 2rem 0 4rem; }
 @media (max-width: 900px) { .landing { grid-template-columns: 1fr; gap: 2rem; } }
 .landing-left .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 16px; display: flex; align-items: center; gap: 10px; }
@@ -173,7 +173,7 @@ body {
 .upload-card .format-pill { display: inline-block; margin-top: 16px; padding: 5px 14px; background: var(--ink); color: var(--paper); border-radius: 99px; font-family: 'JetBrains Mono', monospace; font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em; }
 .upload-card input { display: none; }
 .error-msg { margin-top: 14px; background: var(--bad-bg); color: var(--bad); padding: 10px 14px; border-radius: 8px; font-size: 13px; display: flex; align-items: center; gap: 8px; justify-content: center; }
- 
+
 .loaded-card { background: var(--surface); border: 1.5px solid var(--line); border-radius: 14px; padding: 1.5rem; margin-top: 16px; }
 .loaded-card h3 { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.015em; }
 .loaded-meta { font-family: 'JetBrains Mono', monospace; font-size: 10.5px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
@@ -182,7 +182,7 @@ body {
 .stat-box .sv { font-family: 'Fraunces', serif; font-size: 22px; font-weight: 600; color: var(--ink); letter-spacing: -0.02em; line-height: 1; }
 .stat-box .sl { font-family: 'JetBrains Mono', monospace; font-size: 9px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-top: 4px; }
 .loaded-actions { display: flex; gap: 8px; flex-wrap: wrap; }
- 
+
 .published-bar {
   background: var(--good-bg); border: 1px solid var(--good);
   border-radius: 12px; padding: 14px 18px; margin-bottom: 1.5rem;
@@ -194,7 +194,7 @@ body {
 .pub-title { font-size: 14px; font-weight: 600; color: var(--good); }
 .pub-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--good); opacity: 0.8; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; }
 .published-bar-right { display: flex; gap: 8px; }
- 
+
 .btn { padding: 8px 16px; font-size: 13px; font-weight: 600; border-radius: 8px; cursor: pointer; border: 1px solid transparent; font-family: inherit; display: inline-flex; align-items: center; gap: 6px; transition: all 0.15s; }
 .btn-primary { background: var(--primary); color: #fff; border-color: var(--primary); }
 .btn-primary:hover { background: var(--primary-dark); }
@@ -204,14 +204,14 @@ body {
 .btn-danger:hover { background: var(--bad); color: #fff; }
 .btn-reset { padding: 7px 12px; font-size: 12px; background: transparent; border: 1px solid var(--line); color: var(--muted); border-radius: 8px; cursor: pointer; font-family: inherit; transition: all 0.15s; }
 .btn-reset:hover { color: var(--bad); border-color: var(--bad); }
- 
+
 .viewer-hero { padding: 1rem 0 1.75rem; }
 .viewer-hero .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--primary); text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
 .viewer-hero .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--primary); }
 .viewer-hero h2 { font-family: 'Fraunces', serif; font-size: 2.25rem; font-weight: 600; letter-spacing: -0.025em; color: var(--ink); line-height: 1; }
 .viewer-hero h2 em { font-style: italic; color: var(--primary); }
 .last-update { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); margin-top: 8px; text-transform: uppercase; letter-spacing: 0.1em; }
- 
+
 .tab-nav { display: flex; align-items: center; gap: 4px; margin-bottom: 1.25rem; border-bottom: 1px solid var(--line); padding-bottom: 0; }
 .tab-btn { padding: 10px 18px; font-size: 13px; font-weight: 500; font-family: inherit; background: transparent; border: none; border-bottom: 2px solid transparent; color: var(--muted); cursor: pointer; transition: all 0.15s; display: flex; align-items: center; gap: 8px; margin-bottom: -1px; }
 .tab-btn:hover { color: var(--ink); }
@@ -220,7 +220,7 @@ body {
 .tab-btn.active .tab-count { background: var(--primary-light); color: var(--primary); }
 .tab-pane { display: none; }
 .tab-pane.active { display: block; }
- 
+
 .filters { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 1.25rem; padding: 12px 14px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
 .filters-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; display: flex; align-items: center; gap: 6px; padding-right: 4px; border-right: 1px solid var(--line); margin-right: 2px; }
 .filters select, .search-input { padding: 7px 28px 7px 12px; font-size: 13px; border: 1px solid var(--line-2); border-radius: 8px; background-color: var(--surface); color: var(--ink); font-family: inherit; outline: none; cursor: pointer; appearance: none; background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b716e' stroke-width='2'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 10px center; background-size: 12px; transition: border-color 0.15s; }
@@ -228,7 +228,7 @@ body {
 .search-input { background-image: none; padding-right: 12px; cursor: text; min-width: 180px; }
 .search-input:focus { border-color: var(--primary); }
 .spacer { flex: 1; }
- 
+
 .kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin-bottom: 1.5rem; }
 .kpi { background: var(--surface); border-radius: 12px; padding: 16px 18px; border: 1px solid var(--line); transition: transform 0.15s, box-shadow 0.15s; }
 .kpi:hover { transform: translateY(-1px); box-shadow: var(--shadow); }
@@ -241,7 +241,7 @@ body {
 .kpi .kpi-icon.info { background: var(--info-bg); color: var(--info); }
 .kpi .kpi-value { font-family: 'Fraunces', serif; font-size: 30px; font-weight: 600; color: var(--ink); line-height: 1; letter-spacing: -0.02em; }
 .kpi .kpi-sub { font-size: 11.5px; color: var(--muted); margin-top: 5px; font-family: 'JetBrains Mono', monospace; }
- 
+
 .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: box-shadow 0.15s; }
 .card:hover { box-shadow: var(--shadow); }
 .card-head { padding: 14px 18px; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; flex-wrap: wrap; }
@@ -251,7 +251,7 @@ body {
 .grid-2 { display: grid; grid-template-columns: 2fr 1fr; gap: 14px; margin-bottom: 1.5rem; }
 .grid-2-eq { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 1.5rem; }
 @media (max-width: 1000px) { .grid-2, .grid-2-eq { grid-template-columns: 1fr; } }
- 
+
 .funnel-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; align-items: start; }
 @media (max-width: 700px) { .funnel-container { grid-template-columns: 1fr; } }
 .funnel-legend { display: flex; flex-direction: column; gap: 4px; }
@@ -272,7 +272,7 @@ body {
 .pending-detail-row { display: flex; justify-content: space-between; align-items: center; font-family: 'JetBrains Mono', monospace; font-size: 11px; padding: 3px 0; }
 .pd-month { color: var(--ink-2); font-weight: 500; }
 .pd-count { color: var(--bad); font-weight: 700; }
- 
+
 .donut-wrap { display: flex; flex-direction: column; align-items: center; gap: 14px; }
 .donut-svg { width: 100%; max-width: 200px; height: 200px; }
 .donut-legend { width: 100%; display: flex; flex-direction: column; gap: 4px; }
@@ -300,9 +300,9 @@ body {
 .unpaid-title .partner-sub { font-size: 10px; color: var(--muted); margin-top: 1px; font-family: 'JetBrains Mono', monospace; }
 .unpaid-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-align: right; white-space: nowrap; }
 .unpaid-meta .unpaid-amount { display: block; color: var(--ink); font-weight: 600; font-size: 10.5px; margin-top: 1px; }
- 
+
 .trend-svg { width: 100%; height: 240px; }
- 
+
 .heatmap-wrap { overflow-x: auto; }
 .heatmap-table { width: 100%; border-collapse: separate; border-spacing: 3px; }
 .heatmap-table th { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; padding: 6px 8px; font-weight: 500; text-align: center; }
@@ -314,18 +314,36 @@ body {
 .heatmap-cell .sub { font-size: 9px; opacity: 0.92; margin-top: 3px; }
 .heatmap-cell.empty { background: var(--surface-2); color: var(--muted-2); }
 .heatmap-cell.empty .val { font-size: 12px; font-weight: 400; }
- 
+
 .bn-list { display: flex; flex-direction: column; gap: 12px; }
-.bn-row { display: flex; flex-direction: column; gap: 4px; }
-.bn-row-top { display: flex; justify-content: space-between; align-items: center; }
-.bn-row-label { font-size: 13px; color: var(--ink); font-weight: 500; }
+.bn-row { display: flex; flex-direction: column; gap: 4px; padding: 6px 0; border-radius: 6px; transition: background 0.15s; }
+.bn-row.clickable { cursor: pointer; padding: 6px 8px; margin: 0 -8px; }
+.bn-row.clickable:hover { background: var(--surface-2); }
+.bn-row.expanded { background: var(--surface-2); }
+.bn-row-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.bn-row-label { font-size: 13px; color: var(--ink); font-weight: 500; display: flex; align-items: center; gap: 8px; }
+.bn-row-chevron { font-size: 9px; color: var(--muted); transition: transform 0.2s; display: inline-block; }
+.bn-row.expanded .bn-row-chevron { transform: rotate(180deg); color: var(--primary); }
 .bn-row-val { font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: var(--ink); }
 .bn-row-val small { color: var(--muted); font-weight: 400; margin-left: 6px; }
+.bn-detail { margin-top: 10px; background: var(--surface); border: 1px solid var(--line); border-radius: 8px; overflow: hidden; animation: fadeUp 0.2s ease-out; }
+.bn-detail-head { padding: 8px 12px; background: var(--bad-bg); border-bottom: 1px solid var(--line); font-family: 'JetBrains Mono', monospace; font-size: 9.5px; color: var(--bad); text-transform: uppercase; letter-spacing: 0.1em; font-weight: 600; }
+.bn-detail-list { max-height: 320px; overflow-y: auto; }
+.bn-detail-row { display: grid; grid-template-columns: 50px auto 1fr auto; gap: 10px; padding: 8px 12px; border-bottom: 1px solid var(--line); align-items: center; font-size: 11.5px; }
+.bn-detail-row:last-child { border-bottom: none; }
+.bn-detail-row:hover { background: var(--surface-2); }
+.bn-detail-days { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: var(--bad); text-align: center; background: var(--bad-bg); padding: 3px 6px; border-radius: 4px; }
+.bn-detail-po { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 600; color: var(--ink); background: var(--surface-2); padding: 3px 7px; border-radius: 4px; white-space: nowrap; border: 1px solid var(--line); }
+.bn-detail-po.empty { color: var(--muted); font-weight: 400; font-style: italic; background: transparent; border-style: dashed; }
+.bn-detail-info { color: var(--ink-2); line-height: 1.3; overflow: hidden; min-width: 0; }
+.bn-detail-info .bn-detail-partner { font-weight: 500; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.bn-detail-info .bn-detail-sub { font-size: 10px; color: var(--muted); margin-top: 1px; font-family: 'JetBrains Mono', monospace; }
+.bn-detail-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-align: right; white-space: nowrap; }
 .bn-bar { height: 10px; background: var(--surface-2); border-radius: 5px; overflow: hidden; }
 .bn-bar-fill { height: 100%; border-radius: 5px; transition: width 0.4s ease-out; }
 .bn-period-info { font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 14px; padding: 8px 12px; background: var(--primary-light); border-radius: 8px; display: flex; align-items: center; gap: 8px; border-left: 3px solid var(--primary); }
 .bn-period-info strong { color: var(--primary); font-weight: 700; text-transform: none; letter-spacing: 0; font-size: 11px; }
- 
+
 .tp-list { display: flex; flex-direction: column; gap: 12px; }
 .tp-row { display: flex; flex-direction: column; gap: 5px; }
 .tp-row-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
@@ -336,7 +354,7 @@ body {
 .tp-meta { font-family: 'JetBrains Mono', monospace; font-size: 10px; padding: 1px 6px; border-radius: 4px; flex-shrink: 0; }
 .tp-bar { height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden; }
 .tp-bar-fill { height: 100%; background: var(--primary); border-radius: 3px; transition: width 0.4s; }
- 
+
 .tbl-card { background: var(--surface); border-radius: 14px; border: 1px solid var(--line); overflow: hidden; }
 .tbl-head { display: flex; align-items: center; justify-content: space-between; padding: 14px 18px; border-bottom: 1px solid var(--line); gap: 12px; flex-wrap: wrap; }
 .tbl-title { font-family: 'Fraunces', serif; font-size: 17px; font-weight: 600; color: var(--ink); letter-spacing: -0.015em; }
@@ -363,13 +381,13 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 .raw-status-badge.s-pending { background: var(--warn-bg); color: var(--warn); }
 .raw-status-badge.s-other { background: var(--surface-2); color: var(--muted); }
 .empty-cell { color: var(--muted-2); font-style: italic; font-size: 10.5px; }
- 
+
 .pct { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; font-family: 'JetBrains Mono', monospace; }
 .dot-ico { width: 17px; height: 17px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .pct.g { color: var(--good); } .pct.g .dot-ico { background: var(--good); }
 .pct.a { color: var(--warn); } .pct.a .dot-ico { background: var(--warn); }
 .pct.r { color: var(--bad); } .pct.r .dot-ico { background: var(--bad); }
- 
+
 .empty-blk { text-align: center; padding: 3rem 2rem; color: var(--muted); font-size: 13px; }
 .dash-footer { margin-top: 2rem; padding: 1.25rem 0; font-family: 'JetBrains Mono', monospace; font-size: 10px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.12em; text-align: center; border-top: 1px solid var(--line); }
 .toast { position: fixed; bottom: 28px; right: 28px; background: var(--ink); color: #fff; padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 500; z-index: 999; opacity: 0; transform: translateY(10px); transition: all 0.25s; pointer-events: none; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 10px; max-width: 360px; }
@@ -377,7 +395,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 .toast.success { background: var(--primary); }
 .toast.error { background: var(--bad); }
 .hidden { display: none !important; }
- 
+
 .loading-overlay {
   position: fixed; inset: 0; background: rgba(15,20,25,0.55);
   display: flex; align-items: center; justify-content: center;
@@ -395,14 +413,14 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 }
 .loading-text { font-size: 13px; color: var(--ink-2); font-weight: 500; }
 @keyframes spin { to { transform: rotate(360deg); } }
- 
+
 @keyframes fadeUp { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
 .fade-up { animation: fadeUp 0.4s ease-out backwards; }
 .fade-up.d1 { animation-delay: 0.05s; }
 .fade-up.d2 { animation-delay: 0.1s; }
 .fade-up.d3 { animation-delay: 0.15s; }
 .fade-up.d4 { animation-delay: 0.2s; }
- 
+
 @media print {
   .topbar, .filters, .tbl-actions, .toast, .tab-nav, .published-bar, .loaded-actions { display: none !important; }
   .main { padding: 0; max-width: none; }
@@ -413,7 +431,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 </style>
 </head>
 <body>
- 
+
 <div class="topbar">
   <div class="topbar-logo">PP</div>
   <div>
@@ -433,9 +451,9 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
     </button>
   </div>
 </div>
- 
+
 <div class="main">
- 
+
   <!-- SCREEN 1: MODE SELECTOR -->
   <div id="screen-mode" class="mode-screen">
     <div>
@@ -465,10 +483,10 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       Belum ada data yang dipublish admin. Minta admin upload data terlebih dahulu.
     </div>
   </div>
- 
+
   <!-- SCREEN 2: ADMIN -->
   <div id="screen-admin" class="hidden">
- 
+
     <div id="admin-published-bar" class="published-bar hidden">
       <div class="published-bar-left">
         <div class="pub-icon">
@@ -490,7 +508,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
         </button>
       </div>
     </div>
- 
+
     <div class="landing" id="admin-upload-area">
       <div class="landing-left">
         <div class="eyebrow">Admin Area — Upload Data</div>
@@ -519,7 +537,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
           </div>
         </div>
       </div>
- 
+
       <div>
         <div class="upload-card" id="upload-card"
           ondrop="handleDrop(event)" ondragover="onDrag(event,true)" ondragleave="onDrag(event,false)"
@@ -534,7 +552,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
           <div class="format-pill">Raw data · Summary table · Both supported</div>
           <div id="upload-error" class="error-msg hidden"></div>
         </div>
- 
+
         <div id="loaded-info" class="loaded-card hidden">
           <h3 id="loaded-filename"></h3>
           <div class="loaded-meta" id="loaded-meta"></div>
@@ -554,16 +572,16 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       </div>
     </div>
   </div>
- 
+
   <!-- SCREEN 3: DASHBOARD -->
   <div id="screen-dashboard" class="hidden">
- 
+
     <div class="viewer-hero">
       <div class="eyebrow">— Overview</div>
       <h2 id="dash-title">Semua <em>payout</em></h2>
       <div class="last-update" id="last-update-label"></div>
     </div>
- 
+
     <div class="tab-nav" id="tab-nav">
       <button class="tab-btn active" data-tab="dashboard-tab" onclick="switchTab('dashboard-tab', this)">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
@@ -575,7 +593,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
         <span class="tab-count" id="rawdata-count">0</span>
       </button>
     </div>
- 
+
     <div class="filters" id="filters" style="display:none;">
       <span class="filters-label">
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
@@ -595,7 +613,7 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
         Export Excel
       </button>
     </div>
- 
+
     <div class="tab-pane active" id="dashboard-tab">
       <div class="kpis" id="kpis"></div>
       <div class="grid-2">
@@ -630,27 +648,27 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
       </div>
       <div class="tbl-card" id="tbl-card"></div>
     </div>
- 
+
     <div class="tab-pane" id="rawdata-tab">
       <div class="tbl-card" id="rawdata-card"></div>
     </div>
- 
+
     <div class="dash-footer">
       Partner Payout Tracker Sumatera · Data tersinkron via Supabase Cloud · All computations client-side
     </div>
   </div>
- 
+
 </div><!-- /main -->
- 
+
 <div class="toast" id="toast"></div>
- 
+
 <div id="loading-overlay" class="loading-overlay hidden">
   <div class="loading-box">
     <div class="spinner"></div>
     <div class="loading-text" id="loading-text">Memuat data...</div>
   </div>
 </div>
- 
+
 <script>
 // ═══════════════════════════════════════════════════════════════
 // SUPABASE CONFIGURATION
@@ -658,10 +676,10 @@ table.data tr.grand-total td { background: var(--ink); color: #fff; font-weight:
 const SUPABASE_URL = 'https://xktdiasnxnajwlaqyaxq.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhrdGRpYXNueG5handsYXF5YXhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3OTYxMTMsImV4cCI6MjA5MzM3MjExM30.aBlvJ2Pp6-BTnvXFJGP3jTmhE9ZVQeMB9ggBVKy69oU';
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
- 
+
 // GANTI PASSWORD ADMIN DI BAWAH INI dengan password yang kamu mau
 const ADMIN_PASSWORD = 'admin123';
- 
+
 // ═══════════════════════════════════════════════════════════════
 // STATE
 // ═══════════════════════════════════════════════════════════════
@@ -671,10 +689,10 @@ var S = {
   sort: { col: 'month', dir: 'desc' },
   rawSort: { col: null, dir: 'asc' },
   collapsed: {}, debounceTimer: null,
-  expandedFunnelStage: null, expandedDonutStatus: null,
+  expandedFunnelStage: null, expandedDonutStatus: null, expandedBottleneckStage: null,
   activeTab: 'dashboard-tab', currentMode: null,
 };
- 
+
 // ═══════════════════════════════════════════════════════════════
 // HELPERS
 // ═══════════════════════════════════════════════════════════════
@@ -698,7 +716,7 @@ function hideLoading() { $('loading-overlay').classList.add('hidden'); }
 function unique(arr) { return arr.filter(function(v, i, a) { return a.indexOf(v) === i; }); }
 function gv(id) { var e = $(id); return e ? e.value : ''; }
 function debounceRender() { clearTimeout(S.debounceTimer); S.debounceTimer = setTimeout(render, 180); }
- 
+
 var MONTHS = { Jan:1,Feb:2,Mar:3,Apr:4,May:5,Jun:6,Jul:7,Aug:8,Sep:9,Oct:10,Nov:11,Dec:12 };
 function monthKey(m) {
   if (!m) return 0;
@@ -764,7 +782,7 @@ function sumAgg(rows) {
     return { partner: a.partner+(r.partner||0), po: a.po+(r.po||0), surat: a.surat+(r.surat||0), invoice: a.invoice+(r.invoice||0), clv: a.clv+(r.clv||0), clearing: a.clearing+(r.clearing||0), amount: a.amount+(r.amount||0) };
   }, { partner:0, po:0, surat:0, invoice:0, clv:0, clearing:0, amount:0 });
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // SCREEN MANAGEMENT
 // ═══════════════════════════════════════════════════════════════
@@ -772,7 +790,7 @@ function showScreen(id) {
   ['screen-mode','screen-admin','screen-dashboard'].forEach(function(s) { $(s).classList.add('hidden'); });
   $(id).classList.remove('hidden');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // SUPABASE STORAGE FUNCTIONS
 // ═══════════════════════════════════════════════════════════════
@@ -780,7 +798,7 @@ async function saveToStorage(payload) {
   try {
     // Hapus data lama dulu (kita selalu simpan 1 record terbaru saja)
     await supabaseClient.from('payout_data').delete().neq('id', 0);
- 
+
     // Insert data baru
     const { error } = await supabaseClient.from('payout_data').insert({
       file_name: payload.fileName,
@@ -789,7 +807,7 @@ async function saveToStorage(payload) {
       raw_data: payload.rawRows,
       mode: payload.mode,
     });
- 
+
     if (error) throw error;
     return true;
   } catch (e) {
@@ -798,7 +816,7 @@ async function saveToStorage(payload) {
     return false;
   }
 }
- 
+
 async function loadFromStorage() {
   try {
     const { data, error } = await supabaseClient
@@ -807,10 +825,10 @@ async function loadFromStorage() {
       .order('created_at', { ascending: false })
       .limit(1)
       .maybeSingle();
- 
+
     if (error) throw error;
     if (!data) return null;
- 
+
     return {
       fileName: data.file_name,
       rowCount: data.row_count,
@@ -824,7 +842,7 @@ async function loadFromStorage() {
     return null;
   }
 }
- 
+
 async function deleteFromStorage() {
   try {
     const { error } = await supabaseClient.from('payout_data').delete().neq('id', 0);
@@ -833,7 +851,7 @@ async function deleteFromStorage() {
     return false;
   }
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // MODE: ADMIN
 // ═══════════════════════════════════════════════════════════════
@@ -845,23 +863,23 @@ async function enterAdmin() {
     toast('Password salah', 'error');
     return;
   }
- 
+
   S.currentMode = 'admin';
   var badge = $('mode-badge');
   badge.textContent = 'Admin'; badge.className = 'mode-badge admin'; badge.classList.remove('hidden');
   $('btn-switch-mode').classList.remove('hidden');
   showScreen('screen-admin');
- 
+
   showLoading('Memuat data dari cloud...');
   var saved = await loadFromStorage();
   hideLoading();
- 
+
   if (saved && saved.rawRows && saved.rawRows.length) {
     $('admin-published-bar').classList.remove('hidden');
     $('pub-meta').textContent = 'File: ' + (saved.fileName||'—') + ' · ' + saved.rowCount + ' baris · Dipublish: ' + saved.publishedAt;
   }
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // MODE: VIEWER
 // ═══════════════════════════════════════════════════════════════
@@ -870,11 +888,11 @@ async function enterViewer() {
   var badge = $('mode-badge');
   badge.textContent = 'Viewer'; badge.className = 'mode-badge viewer'; badge.classList.remove('hidden');
   $('btn-switch-mode').classList.remove('hidden');
- 
+
   showLoading('Memuat data dari cloud...');
   var saved = await loadFromStorage();
   hideLoading();
- 
+
   if (!saved || !saved.rawRows || !saved.rawRows.length) {
     $('viewer-no-data').classList.remove('hidden');
     return;
@@ -882,7 +900,7 @@ async function enterViewer() {
   loadSavedData(saved);
   showScreen('screen-dashboard');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // SWITCH MODE
 // ═══════════════════════════════════════════════════════════════
@@ -896,13 +914,13 @@ $('btn-switch-mode').onclick = function() {
   // Re-check storage badge
   initBadges();
 };
- 
+
 // ═══════════════════════════════════════════════════════════════
 // FILE UPLOAD
 // ═══════════════════════════════════════════════════════════════
 function onDrag(e, on) { e.preventDefault(); $('upload-card').classList.toggle('drag', on); }
 function handleDrop(e) { e.preventDefault(); onDrag(e, false); if (e.dataTransfer.files[0]) handleFile(e.dataTransfer.files[0]); }
- 
+
 function handleFile(file) {
   if (!file) return;
   $('upload-error').classList.add('hidden');
@@ -923,7 +941,7 @@ function handleFile(file) {
       }
       S.rawRows = XLSX.utils.sheet_to_json(ws, { defval: null, range: hdrIdx });
       if (!S.rawRows.length) { showUploadErr('Sheet kosong atau format tidak dikenali'); return; }
- 
+
       // Convert Date objects to ISO strings for JSON serialization
       S.rawRows = S.rawRows.map(function(row) {
         var clean = {};
@@ -934,9 +952,9 @@ function handleFile(file) {
         });
         return clean;
       });
- 
+
       detectMode();
- 
+
       var t = sumAgg(S.aggregated);
       $('loaded-filename').textContent = file.name;
       $('loaded-meta').textContent = wb.SheetNames.length + ' sheet · ' + S.rawRows.length.toLocaleString() + ' baris · '
@@ -956,9 +974,9 @@ function handleFile(file) {
   rd.onerror = function() { showUploadErr('Error membaca file'); };
   rd.readAsArrayBuffer(file);
 }
- 
+
 function showUploadErr(msg) { var e = $('upload-error'); e.textContent = msg; e.classList.remove('hidden'); }
- 
+
 function resetUploadUI() {
   $('loaded-info').classList.add('hidden');
   $('upload-card').style.display = '';
@@ -966,7 +984,7 @@ function resetUploadUI() {
   $('upload-error').classList.add('hidden');
   S.rawRows = []; S.aggregated = []; S.rawDetails = []; S.mode = null;
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // PUBLISH DATA
 // ═══════════════════════════════════════════════════════════════
@@ -989,7 +1007,7 @@ async function publishData() {
     toast('Data berhasil dipublish ke cloud! Semua viewer dapat melihat.', 'success');
   }
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // VIEW DASHBOARD (dari Admin)
 // ═══════════════════════════════════════════════════════════════
@@ -1008,7 +1026,7 @@ async function viewDashboard() {
     toast('Tidak ada data, upload dulu', 'error');
   }
 }
- 
+
 function previewDashboard() {
   if (!S.rawRows.length) { toast('Upload file dulu', 'error'); return; }
   buildFilters(); render();
@@ -1016,7 +1034,7 @@ function previewDashboard() {
   $('last-update-label').textContent = 'Preview — belum dipublish · File: ' + S.fileName;
   showScreen('screen-dashboard');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // CLEAR DATA
 // ═══════════════════════════════════════════════════════════════
@@ -1029,7 +1047,7 @@ async function clearData() {
   $('pub-meta').textContent = '';
   toast('Data berhasil dihapus', 'success');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // LOAD SAVED DATA
 // ═══════════════════════════════════════════════════════════════
@@ -1049,7 +1067,7 @@ function loadSavedData(saved) {
   $('rawdata-count').textContent = S.rawRows.length.toLocaleString();
   if (saved.publishedAt) $('last-update-label').textContent = 'Data per: ' + saved.publishedAt + ' · File: ' + S.fileName;
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // DATA DETECTION
 // ═══════════════════════════════════════════════════════════════
@@ -1064,7 +1082,7 @@ function detectMode() {
     S.mode = 'raw'; S.rawDetails = S.rawRows.filter(isRawDataRow); S.aggregated = buildAggFromRaw(S.rawDetails);
   }
 }
- 
+
 function isRawDataRow(r) {
   var m = gstr(r, ['program date','month','bulan','periode']).toLowerCase();
   var e = gstr(r, ['entity partner','entity']).toLowerCase();
@@ -1073,7 +1091,7 @@ function isRawDataRow(r) {
   var hasKey = gstr(r, ['partner name','nama partner']) || gstr(r, ['project title']) || gstr(r, ['#req id','req id']);
   return m && hasKey;
 }
- 
+
 function buildAggFromRaw(rows) {
   var groups = {};
   rows.forEach(function(r) {
@@ -1094,7 +1112,7 @@ function buildAggFromRaw(rows) {
   });
   return Object.values(groups);
 }
- 
+
 function buildAggFromAggregated(rows) {
   var out = [];
   rows.forEach(function(r) {
@@ -1116,7 +1134,7 @@ function buildAggFromAggregated(rows) {
   });
   return out;
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // FILTERS
 // ═══════════════════════════════════════════════════════════════
@@ -1142,21 +1160,21 @@ function buildFilters() {
   }
   $('filters').style.display = 'flex';
 }
- 
+
 function setOpts(id, vals, ph) {
   var el = $(id); if (!el) return;
   var cur = el.value;
   el.innerHTML = '<option value="">' + ph + '</option>' +
     vals.map(function(v){ return '<option value="' + ea(v) + '"' + (v === cur ? ' selected' : '') + '>' + esc(v) + '</option>'; }).join('');
 }
- 
+
 function clearFilters() {
   ['f-month','f-entity','f-partner','f-type','f-status'].forEach(function(id){ var el=$(id); if(el) el.value=''; });
   $('f-search').value = '';
-  S.expandedFunnelStage = null; S.expandedDonutStatus = null;
+  S.expandedFunnelStage = null; S.expandedDonutStatus = null; S.expandedBottleneckStage = null;
   render();
 }
- 
+
 function getFiltered() {
   var fm=gv('f-month'), fe=gv('f-entity'), fp=gv('f-partner'), ft=gv('f-type'), fs=gv('f-status');
   var q = (gv('f-search') || '').toLowerCase();
@@ -1175,7 +1193,7 @@ function getFiltered() {
   if (S.mode === 'raw' && (fs || q)) agg = buildAggFromRaw(raw);
   return { agg: agg, raw: raw };
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // TAB
 // ═══════════════════════════════════════════════════════════════
@@ -1187,7 +1205,7 @@ function switchTab(tabId, btnEl) {
   $(tabId).classList.add('active');
   if (tabId === 'rawdata-tab') renderRawDataTable();
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // RENDER
 // ═══════════════════════════════════════════════════════════════
@@ -1206,7 +1224,7 @@ function render() {
   renderTable(data.agg);
   if (S.activeTab === 'rawdata-tab') renderRawDataTable();
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // KPIs
 // ═══════════════════════════════════════════════════════════════
@@ -1221,10 +1239,7 @@ function renderKPIs(data) {
     { label:'% Clearing',     value:t.partner?pcl+'%':'—', sub:t.partner?t.clearing+' / '+t.partner:'', icon:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 22h18M3 10h18M5 6l7-4 7 4M4 10v12M20 10v12"/></svg>', cls:pctClass(pcl) },
   ];
   if (S.mode === 'raw') {
-    var today = new Date();
-    var agingCount = data.raw.filter(function(r){ if(gcell(r,['clearing date']))return false; var d=daysBetween(toDate(gcell(r,['reva date'])),today); return d!==null&&d>30; }).length;
     var sumAmount = data.raw.reduce(function(a,r){ return a+(gnum(r,['amount'])||0); }, 0);
-    kpis.push({ label:'Aging >30d', value:agingCount.toString(), sub:'stuck > 30 hari', icon:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/></svg>', cls:agingCount>0?'bad':'good' });
     kpis.push({ label:'Total Amount', value:fmtIDR(sumAmount), sub:fmtIDRFull(sumAmount), icon:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>' });
   } else {
     kpis.push({ label:'Bulan Aktif', value:months, sub:data.agg.length+' baris data', icon:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>' });
@@ -1237,12 +1252,12 @@ function renderKPIs(data) {
       + '</div>';
   }).join('');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // FUNNEL
 // ═══════════════════════════════════════════════════════════════
 var STAGE_HINTS = { po:['po number','po #'], surat:['surat pemberitahuan','surat'], invoice:['invoice submission','invoice'], clv:['clv date','clv'], clearing:['clearing date','clearing'] };
- 
+
 function getStageDropByMonth(stageKey, data) {
   var byMonth = {};
   if (S.mode === 'raw') {
@@ -1253,9 +1268,9 @@ function getStageDropByMonth(stageKey, data) {
   }
   return Object.keys(byMonth).map(function(m){ return {month:m,count:byMonth[m]}; }).sort(function(a,b){ return monthKey(b)-monthKey(a); });
 }
- 
+
 function toggleFunnelStage(sk) { S.expandedFunnelStage = S.expandedFunnelStage === sk ? null : sk; renderFunnel(getFiltered()); }
- 
+
 function renderFunnel(data) {
   if (!data.agg.length) { $('funnel-body').innerHTML = emptyBlk(); return; }
   var t = sumAgg(data.agg);
@@ -1298,7 +1313,7 @@ function renderFunnel(data) {
   }).join('') + '</div>';
   $('funnel-body').innerHTML = '<div class="funnel-container">' + svg + legend + '</div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // DONUT
 // ═══════════════════════════════════════════════════════════════
@@ -1314,7 +1329,7 @@ function getUnpaidRecords(statusName, raw) {
     .sort(function(a,b){ return b.amount-a.amount; });
 }
 function toggleDonutStatus(name) { S.expandedDonutStatus = S.expandedDonutStatus === name ? null : name; renderDonut(getFiltered()); }
- 
+
 function renderDonut(data) {
   var pieces = [];
   if (S.mode === 'raw') {
@@ -1370,7 +1385,7 @@ function renderDonut(data) {
   }).join('') + '</div>';
   $('donut-body').innerHTML = '<div class="donut-wrap">' + svg + legend + '</div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // TREND
 // ═══════════════════════════════════════════════════════════════
@@ -1396,7 +1411,7 @@ function renderTrend(agg) {
     +'<div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:3px;background:#0d5d48;border-radius:2px;"></div>% Clearing</div>'
     +'</div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // HEATMAP
 // ═══════════════════════════════════════════════════════════════
@@ -1426,14 +1441,19 @@ function renderHeatmap(agg) {
     + [5,30,55,75,88,96].map(function(p){ return '<span style="width:24px;height:14px;border-radius:3px;background:'+heatColor(p)+';display:block;"></span>'; }).join('')
     + '</div><span>0% → 100%</span></div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // BOTTLENECK
 // ═══════════════════════════════════════════════════════════════
+function toggleBottleneckStage(idx) {
+  S.expandedBottleneckStage = S.expandedBottleneckStage === idx ? null : idx;
+  renderBottleneck(getFiltered().raw);
+}
+
 function renderBottleneck(raw) {
   if (!raw.length) { $('bottleneck-body').innerHTML = emptyBlk(); return; }
   var allMonths = unique(raw.map(function(r){ return gstr(r,['program date','month','bulan','periode']); }).filter(Boolean)).sort(function(a,b){ return monthKey(b)-monthKey(a); });
-  var infoBar = '<div class="bn-period-info"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Semua periode: <strong>'+allMonths.length+' bulan</strong> · <strong>'+raw.length.toLocaleString()+'</strong> records</div>';
+  var infoBar = '<div class="bn-period-info"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Semua periode: <strong>'+allMonths.length+' bulan</strong> · <strong>'+raw.length.toLocaleString()+'</strong> records · <span style="color:var(--primary);font-weight:600;">klik baris untuk lihat case terlama</span></div>';
   var pairs = [
     { from:'reva date', to:'po date', label:'Reva → PO' },
     { from:'po date', to:'surat pemberitahuan', label:'PO → Surat' },
@@ -1441,16 +1461,55 @@ function renderBottleneck(raw) {
     { from:'invoice submission', to:'clv date', label:'Invoice → CLV' },
     { from:'clv date', to:'clearing date', label:'CLV → Clearing' },
   ];
+  // Hitung detail per record + summary stats per stage
   var results = pairs.map(function(p) {
-    var ds = raw.map(function(r){ return daysBetween(toDate(gcell(r,[p.from])), toDate(gcell(r,[p.to]))); }).filter(function(x){ return x!==null&&x>=0; });
+    var details = raw.map(function(r) {
+      var d = daysBetween(toDate(gcell(r,[p.from])), toDate(gcell(r,[p.to])));
+      if (d===null || d<0) return null;
+      return {
+        days: d,
+        po: gstr(r,['po number','po #']),
+        partner: gstr(r,['partner name']),
+        title: gstr(r,['project title','project']) || gstr(r,['partner name']) || '—',
+        month: gstr(r,['program date','month','bulan','periode']),
+        amount: gnum(r,['amount']),
+      };
+    }).filter(function(x){ return x!==null; });
+    var ds = details.map(function(d){ return d.days; });
     var avg = ds.length ? ds.reduce(function(a,b){ return a+b; },0)/ds.length : 0;
     var max = ds.length ? Math.max.apply(null,ds) : 0;
-    return { label:p.label, avg:avg, max:max, n:ds.length };
+    return { label:p.label, avg:avg, max:max, n:ds.length, details:details };
   });
   var maxAvg = Math.max.apply(null, results.map(function(r){ return r.avg; })) || 1;
-  $('bottleneck-body').innerHTML = infoBar + '<div class="bn-list">' + results.map(function(r) {
+  $('bottleneck-body').innerHTML = infoBar + '<div class="bn-list">' + results.map(function(r, idx) {
     var color = r.avg<=2?'var(--good)':r.avg<=5?'var(--warn)':'var(--bad)';
-    return '<div class="bn-row"><div class="bn-row-top"><div class="bn-row-label">'+esc(r.label)+'</div><div class="bn-row-val">'+r.avg.toFixed(1)+'d <small>max '+r.max+'d · n='+r.n+'</small></div></div><div class="bn-bar"><div class="bn-bar-fill" style="width:'+(r.avg/maxAvg*100)+'%;background:'+color+'"></div></div></div>';
+    var isExp = S.expandedBottleneckStage === idx;
+    // Sort details by days descending, ambil top 20 terlama
+    var topSlow = [].concat(r.details).sort(function(a,b){ return b.days - a.days; }).slice(0, 20);
+    var detailHTML = '';
+    if (isExp && topSlow.length) {
+      detailHTML = '<div class="bn-detail"><div class="bn-detail-head">Top ' + topSlow.length + ' case terlama (' + r.label + ')</div><div class="bn-detail-list">'
+        + topSlow.map(function(d) {
+          return '<div class="bn-detail-row">'
+            + '<div class="bn-detail-days">' + d.days + 'd</div>'
+            + (d.po ? '<div class="bn-detail-po">' + esc(d.po) + '</div>' : '<div class="bn-detail-po empty">no PO</div>')
+            + '<div class="bn-detail-info"><div class="bn-detail-partner" title="' + ea(d.partner||d.title) + '">' + esc(d.partner||d.title) + '</div>'
+            + (d.title && d.partner && d.title !== d.partner ? '<div class="bn-detail-sub">' + esc(d.title) + '</div>' : '')
+            + '</div>'
+            + '<div class="bn-detail-meta">' + esc(d.month) + (d.amount ? '<br>' + fmtIDR(d.amount) : '') + '</div>'
+            + '</div>';
+        }).join('')
+        + '</div></div>';
+    }
+    var canExpand = r.details.length > 0;
+    return '<div class="bn-row' + (canExpand?' clickable':'') + (isExp?' expanded':'') + '"' + (canExpand?' onclick="toggleBottleneckStage(' + idx + ')"':'') + '>'
+      + '<div class="bn-row-top">'
+      + '<div class="bn-row-label">' + esc(r.label) + (canExpand?'<span class="bn-row-chevron">▼</span>':'') + '</div>'
+      + '<div class="bn-row-val">'+r.avg.toFixed(1)+'d <small>max '+r.max+'d · n='+r.n+'</small></div>'
+      + '</div>'
+      + '<div class="bn-bar"><div class="bn-bar-fill" style="width:'+(r.avg/maxAvg*100)+'%;background:'+color+'"></div></div>'
+      + detailHTML
+      + '</div>';
   }).join('') + '</div>'
     + '<div style="display:flex;gap:14px;margin-top:14px;font-family:JetBrains Mono,monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);">'
     + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:var(--good);border-radius:3px;display:block;"></span>≤2d fast</span>'
@@ -1458,7 +1517,7 @@ function renderBottleneck(raw) {
     + '<span style="display:flex;align-items:center;gap:5px;"><span style="width:10px;height:10px;background:var(--bad);border-radius:3px;display:block;"></span>&gt;5d slow</span>'
     + '</div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // TOP PARTNERS
 // ═══════════════════════════════════════════════════════════════
@@ -1480,7 +1539,7 @@ function renderTopPartners(raw) {
     return '<div class="tp-row"><div class="tp-row-top"><div class="tp-row-left"><div class="tp-rank">#'+(i+1)+'</div><div class="tp-name" title="'+ea(p.name)+'">'+esc(p.name)+'</div><span class="tp-meta" style="background:'+mbg+';color:'+mfg+'">'+cr+'%</span></div><div class="tp-amt">'+fmtIDR(p.amount)+'</div></div><div class="tp-bar"><div class="tp-bar-fill" style="width:'+(p.amount/maxA*100)+'%"></div></div></div>';
   }).join('') + '</div>';
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // SUMMARY TABLE
 // ═══════════════════════════════════════════════════════════════
@@ -1499,7 +1558,7 @@ var COLS = [
   { key:'clvPct',      label:'%CLV' },
   { key:'clearingPct', label:'%Clearing' },
 ];
- 
+
 function pctBadge(p) {
   var cls = p>=100?'g':p>=80?'a':'r';
   var icon = p>=100
@@ -1509,7 +1568,7 @@ function pctBadge(p) {
     : '<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>';
   return '<span class="pct ' + cls + '"><span class="dot-ico">' + icon + '</span>' + p + '%</span>';
 }
- 
+
 function renderTable(agg) {
   if (!agg.length) { $('tbl-card').innerHTML = '<div class="empty-blk" style="padding:4rem;">Tidak ada data — coba sesuaikan filter atau reset</div>'; return; }
   var months = unique(agg.map(function(r){ return r.month; })).sort(function(a,b){ var diff=monthKey(a)-monthKey(b); return S.sort.dir==='asc'?diff:-diff; });
@@ -1542,7 +1601,7 @@ function renderTable(agg) {
     + '</div>'
     + '<div class="tbl-wrap"><table class="data"><thead><tr>' + ths + '</tr></thead><tbody>' + rows + '</tbody><tfoot>' + footer + '</tfoot></table></div>';
 }
- 
+
 function toggleMonth(m) { S.collapsed[m] = !S.collapsed[m]; render(); }
 function toggleAllMonths() {
   var data=getFiltered(), months=unique(data.agg.map(function(r){ return r.month; }));
@@ -1550,7 +1609,7 @@ function toggleAllMonths() {
   months.forEach(function(m){ S.collapsed[m]=anyOpen; }); render();
 }
 function sortBy(col) { if(S.sort.col===col)S.sort.dir=S.sort.dir==='asc'?'desc':'asc'; else{S.sort.col=col;S.sort.dir='desc';} render(); }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // RAW DATA TABLE
 // ═══════════════════════════════════════════════════════════════
@@ -1583,7 +1642,7 @@ function getFilteredRaw() {
   });
 }
 function rawSortBy(col) { if(S.rawSort.col===col)S.rawSort.dir=S.rawSort.dir==='asc'?'desc':'asc'; else{S.rawSort.col=col;S.rawSort.dir='asc';} renderRawDataTable(); }
- 
+
 function fmtCellValue(val, key) {
   if (val===null||val===undefined||val==='') return '<span class="empty-cell">—</span>';
   var kl = String(key).toLowerCase();
@@ -1643,7 +1702,7 @@ function exportRawData() {
   XLSX.writeFile(wb,'raw_export_'+new Date().toISOString().slice(0,10)+'.xlsx');
   toast('Raw data diunduh!','success');
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // EXPORT
 // ═══════════════════════════════════════════════════════════════
@@ -1664,7 +1723,7 @@ function doExport(format) {
     toast('CSV berhasil diunduh!','success');
   }
 }
- 
+
 // ═══════════════════════════════════════════════════════════════
 // THEME & MISC
 // ═══════════════════════════════════════════════════════════════
@@ -1674,7 +1733,7 @@ $('btn-theme').onclick = function() {
   document.documentElement.setAttribute('data-theme', cur==='dark'?'light':'dark');
 };
 $('btn-print').onclick = function() { window.print(); };
- 
+
 // ═══════════════════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════════════════
@@ -1693,7 +1752,7 @@ async function initBadges() {
     }
   } catch(e) { console.error('Init error:', e); }
 }
- 
+
 initBadges();
 </script>
 </body>
