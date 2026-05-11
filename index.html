@@ -34,7 +34,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 @media (max-width:768px){.main{padding:1.25rem 1rem 2rem}}
 @media (max-width:480px){.main{padding:1rem 0.75rem 1.5rem}}
 
-/* DATA SOURCE TABS — only Partner & Agency */
 .datasource-tabs{display:flex;gap:8px;margin-bottom:1.25rem;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:6px;width:fit-content}
 .ds-tab{padding:8px 20px;font-size:12.5px;font-weight:600;border-radius:8px;cursor:pointer;border:none;font-family:inherit;transition:all 0.2s;display:flex;align-items:center;gap:7px;color:var(--muted);background:transparent}
 .ds-tab:hover{color:var(--ink)}
@@ -285,7 +284,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .heatmap-cell.empty .val{font-size:12px;font-weight:400}
 .heatmap-legend{display:flex;align-items:center;gap:8px;font-family:'JetBrains Mono',monospace;font-size:10px;text-transform:uppercase;letter-spacing:0.1em;color:var(--muted);margin-top:12px}
 
-/* ═══════ BOTTLENECK — SIMPLIFIED v2 ═══════ */
 .bn-period-info{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:14px;padding:7px 11px;background:var(--primary-light);border-radius:7px;display:flex;align-items:center;gap:7px;border-left:3px solid var(--primary);flex-wrap:wrap}
 .bn-period-info strong{color:var(--primary);font-weight:700;text-transform:none;letter-spacing:0;font-size:11px}
 
@@ -335,7 +333,6 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);m
 .bn-legend-compact .bn-leg-dot{width:10px;height:10px;border-radius:3px;flex-shrink:0}
 .bn-legend-compact .bn-leg-marker{width:2px;height:12px;background:var(--ink);opacity:0.6;flex-shrink:0}
 
-/* TOP PARTNERS */
 .tp-list{display:flex;flex-direction:column;gap:6px}
 .tp-row{display:flex;flex-direction:column;gap:5px;padding:6px 8px;margin:0 -8px;border-radius:6px;transition:background 0.15s}
 .tp-row.clickable{cursor:pointer}
@@ -423,7 +420,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
 
 .empty-blk{text-align:center;padding:3rem 2rem;color:var(--muted);font-size:13px}
 
-/* ═══════ DASH NOTES — COMPACT v2 ═══════ */
 .dash-notes-compact{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px;margin-bottom:1rem;margin-top:0.5rem}
 .dash-notes-compact-head{display:flex;align-items:center;gap:8px;margin-bottom:8px}
 .dash-notes-compact-title{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.12em;display:flex;align-items:center;gap:6px}
@@ -512,7 +508,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
 
 <div class="main">
 
-  <!-- SCREEN 1: MODE SELECTOR -->
   <div id="screen-mode" class="mode-screen">
     <div>
       <div class="mode-eyebrow">Selamat Datang</div>
@@ -540,7 +535,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
     <div id="viewer-no-data" class="no-data-warn hidden">⚠️ Belum ada data yang dipublish admin.</div>
   </div>
 
-  <!-- SCREEN 2: ADMIN -->
   <div id="screen-admin" class="hidden">
     <div id="admin-published-bar" class="published-bar hidden">
       <div class="published-bar-left">
@@ -569,7 +563,7 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
         <p>Upload dua file terpisah: Partner Prepaid dan Agency Prepaid. Dashboard menampilkan data terpisah dengan toggle Partner / Agency.</p>
         <div class="feature-list">
           <div class="feature-item"><span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Upload Partner Prepaid + Agency Prepaid terpisah</div>
-          <div class="feature-item"><span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Bottleneck SLA: 2/1/2/2/3 HK · ringkas &amp; mudah dibaca</div>
+          <div class="feature-item"><span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Partner SLA 2/1/2/2/3 HK · Agency SLA 2/2/2/3 HK</div>
           <div class="feature-item"><span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Search Program Type · Format tanggal konsisten</div>
           <div class="feature-item"><span class="feature-item-icon"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><polyline points="20 6 9 17 4 12"/></svg></span>Export Excel berurutan rapih</div>
         </div>
@@ -620,7 +614,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
     </div>
   </div>
 
-  <!-- SCREEN 3: DASHBOARD -->
   <div id="screen-dashboard" class="hidden">
     <div class="viewer-hero">
       <div class="eyebrow">— Overview</div>
@@ -628,7 +621,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
       <div class="last-update" id="last-update-label"></div>
     </div>
 
-    <!-- Data source tabs: HANYA Partner & Agency -->
     <div class="datasource-tabs" id="datasource-tabs">
       <button class="ds-tab partner active" onclick="switchDataSource('partner',this)">
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
@@ -738,7 +730,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
       </div>
       <div class="tbl-card" id="tbl-card"></div>
 
-      <!-- Compact Notes -->
       <div class="dash-notes-compact">
         <div class="dash-notes-compact-head">
           <div class="dash-notes-compact-title">Keterangan &amp; Sumber Data</div>
@@ -746,7 +737,7 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
         <div class="dash-notes-compact-grid">
           <div class="dash-note-mini source">
             <div class="dash-note-mini-label">Sumber</div>
-            <div class="dash-note-mini-text">SAP &amp; Web Coupa · SLA 2/1/2/2/3 HK</div>
+            <div class="dash-note-mini-text">SAP &amp; Web Coupa · Partner SLA 2/1/2/2/3 · Agency SLA 2/2/2/3 HK</div>
           </div>
           <div class="dash-note-mini invoice">
             <div class="dash-note-mini-label">Invoice Sub.</div>
@@ -769,11 +760,11 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
     </div>
 
     <div class="dash-footer">
-      Partner &amp; Agency Payout Tracker Sumatera · SAP &amp; Web Coupa · SLA 2/1/2/2/3 HK · Cloud Sync
+      Partner &amp; Agency Payout Tracker Sumatera · SAP &amp; Web Coupa · Partner SLA 2/1/2/2/3 HK · Agency SLA 2/2/2/3 HK · Cloud Sync
     </div>
   </div>
 
-</div><!-- /main -->
+</div>
 
 <div class="toast" id="toast"></div>
 <div id="loading-overlay" class="loading-overlay hidden">
@@ -784,9 +775,6 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
 </div>
 
 <script>
-// ═════════════════════════════════════════════════════
-// SUPABASE CONFIG
-// ═════════════════════════════════════════════════════
 const SUPABASE_URL = 'https://xktdiasnxnajwlaqyaxq.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhrdGRpYXNueG5handsYXF5YXhxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzc3OTYxMTMsImV4cCI6MjA5MzM3MjExM30.aBlvJ2Pp6-BTnvXFJGP3jTmhE9ZVQeMB9ggBVKy69oU';
 const _sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
@@ -797,14 +785,11 @@ async function hashPass(p){
   return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2,'0')).join('');
 }
 
-// ═════════════════════════════════════════════════════
-// SLA DEFINITIONS (Hari Kerja)
-// Reva → PO          : 2 HK
-// PO → Surat Pemb.   : 1 HK
-// Surat → Invoice    : 2 HK
-// Invoice → CLV      : 2 HK
-// CLV → Clearing     : 3 HK
-// ═════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// SLA DEFINITIONS
+// Partner: Reva→PO(2) · PO→Surat(1) · Surat→Invoice(2) · Invoice→CLV(2) · CLV→Clearing(3)
+// Agency:  Req→PO(2)  · PO→Invoice(2)                  · Invoice→CLV(2) · CLV→Clearing(3)
+// ═══════════════════════════════════════════════════════
 const SLA_DEFINITIONS = [
   { label: 'Reva → PO',           sla: 2, desc: 'Reva Date & Approval IOM' },
   { label: 'PO → Surat Pemb.',    sla: 1, desc: 'S&D Circle kirim surat ke partner' },
@@ -813,9 +798,13 @@ const SLA_DEFINITIONS = [
   { label: 'CLV → Clearing Bank', sla: 3, desc: 'Pembayaran Cash Management' },
 ];
 
-// ═════════════════════════════════════════════════════
-// STATE — currentSource default 'partner' (no 'all')
-// ═════════════════════════════════════════════════════
+const SLA_AGENCY = [
+  { label: 'Req → PO',            sla: 2, desc: 'Req Date ke PO Issued' },
+  { label: 'PO → Invoice Sub.',   sla: 2, desc: 'PO ke Submit Invoice via Coupa' },
+  { label: 'Invoice → CLV',       sla: 2, desc: 'AP cek dokumen & Review Finance' },
+  { label: 'CLV → Clearing Bank', sla: 3, desc: 'Pembayaran Cash Management' },
+];
+
 var S = {
   partnerRows: [], agencyRows: [],
   partnerFileName: '', agencyFileName: '',
@@ -833,9 +822,6 @@ var S = {
   allProgtypes: [],
 };
 
-// ═════════════════════════════════════════════════════
-// HELPERS
-// ═════════════════════════════════════════════════════
 function $(id){ return document.getElementById(id); }
 function esc(s){ if(s===null||s===undefined)return''; return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#039;'); }
 function ea(s){ return esc(s).replace(/'/g,'&#039;'); }
@@ -912,9 +898,7 @@ function pctClass(p){return p>=95?'good':p>=70?'warn':'bad';}
 function emptyBlk(msg){return '<div class="empty-blk">'+(msg?esc(msg):'Tidak ada data')+'</div>';}
 function sumAgg(rows){return rows.reduce(function(a,r){return{partner:a.partner+(r.partner||0),po:a.po+(r.po||0),surat:a.surat+(r.surat||0),invoice:a.invoice+(r.invoice||0),clv:a.clv+(r.clv||0),clearing:a.clearing+(r.clearing||0),amount:a.amount+(r.amount||0)};},{partner:0,po:0,surat:0,invoice:0,clv:0,clearing:0,amount:0});}
 
-// ═════════════════════════════════════════════════════
-// PROGRAM TYPE SEARCH MODAL
-// ═════════════════════════════════════════════════════
+// ── PROGTYPE MODAL ──────────────────────────────────────
 function openProgtypeModal(){
   $('progtype-modal-overlay').classList.remove('hidden');
   $('progtype-search-input').value='';
@@ -922,7 +906,6 @@ function openProgtypeModal(){
   setTimeout(function(){$('progtype-search-input').focus();},100);
 }
 function closeProgtypeModal(){$('progtype-modal-overlay').classList.add('hidden');}
-
 function filterProgtypeModal(){
   var q=($('progtype-search-input').value||'').toLowerCase().trim();
   var current=gv('f-type');
@@ -941,14 +924,11 @@ function filterProgtypeModal(){
   }).join('');
   $('progtype-modal-info').textContent=types.length+' program type';
 }
-
 function selectProgtype(val){var sel=$('f-type');if(sel)sel.value=val;closeProgtypeModal();render();}
 function clearProgtype(){var sel=$('f-type');if(sel)sel.value='';closeProgtypeModal();render();}
 document.addEventListener('keydown',function(e){if(e.key==='Escape')closeProgtypeModal();});
 
-// ═════════════════════════════════════════════════════
-// DATA SOURCE SWITCH — hanya partner / agency
-// ═════════════════════════════════════════════════════
+// ── DATA SOURCE SWITCH ──────────────────────────────────
 function switchDataSource(src,btn){
   if(src!=='partner'&&src!=='agency')src='partner';
   S.currentSource=src;
@@ -960,21 +940,17 @@ function switchDataSource(src,btn){
   if(titleEl)titleEl.innerHTML=src==='agency'?'<em>Agency Prepaid</em>':'<em>Partner Prepaid</em>';
   rebuildFromSource();buildFilters();render();
 }
-
 function getActiveRows(){
   if(S.currentSource==='agency')return S.agencyRows;
   return S.partnerRows;
 }
-
 function rebuildFromSource(){
   S.rawRows=getActiveRows();
   if(!S.rawRows.length){S.aggregated=[];S.rawDetails=[];S.mode=null;return;}
   detectMode();
 }
 
-// ═════════════════════════════════════════════════════
-// SEARCH AUTOCOMPLETE
-// ═════════════════════════════════════════════════════
+// ── SEARCH AUTOCOMPLETE ─────────────────────────────────
 var SEARCH={activeIdx:-1,suggestions:[]};
 function getSearchSuggestions(query){
   var source=S.rawDetails.length?S.rawDetails:S.rawRows;
@@ -1021,9 +997,7 @@ document.addEventListener('click',function(e){if(!e.target.closest('.search-wrap
 
 function showScreen(id){['screen-mode','screen-admin','screen-dashboard'].forEach(function(s){$(s).classList.add('hidden');});$(id).classList.remove('hidden');}
 
-// ═════════════════════════════════════════════════════
-// SUPABASE STORAGE
-// ═════════════════════════════════════════════════════
+// ── SUPABASE ────────────────────────────────────────────
 async function saveToStorage(payload){
   try{await _sb.from('payout_data').delete().gt('id',0);var r=await _sb.from('payout_data').insert({file_name:payload.fileName,row_count:payload.rowCount,published_at:payload.publishedAt,raw_data:payload.rawRows,mode:payload.mode});if(r.error)throw r.error;return true;}
   catch(e){console.error('Save error:',e);toast('Gagal menyimpan: '+(e.message||'Unknown error'),'error');return false;}
@@ -1037,9 +1011,7 @@ async function deleteFromStorage(){
   catch(e){console.error('Delete error:',e);return false;}
 }
 
-// ═════════════════════════════════════════════════════
-// MODE: ADMIN / VIEWER
-// ═════════════════════════════════════════════════════
+// ── ADMIN / VIEWER ──────────────────────────────────────
 async function enterAdmin(){
   var input=prompt('Masukkan password admin:');if(input===null)return;
   var h=await hashPass(input);if(h!==ADMIN_HASH){toast('Password salah','error');return;}
@@ -1051,7 +1023,6 @@ async function enterAdmin(){
   var saved=await loadFromStorage();hideLoading();
   if(saved&&saved.rawRows&&saved.rawRows.length){$('admin-published-bar').classList.remove('hidden');$('pub-meta').textContent='File: '+saved.fileName+' · '+(saved.rowCount||0).toLocaleString()+' baris · Publish: '+saved.publishedAt;}
 }
-
 async function enterViewer(){
   S.currentMode='viewer';
   var badge=$('mode-badge');badge.textContent='Viewer';badge.className='mode-badge viewer';badge.classList.remove('hidden');
@@ -1062,7 +1033,6 @@ async function enterViewer(){
   loadSavedData(saved);showScreen('screen-dashboard');
 }
 
-// FILE UPLOAD
 function onDrag(e,on,src){e.preventDefault();$('upload-card-'+src).classList.toggle('drag',on);}
 function handleDrop(e,src){e.preventDefault();onDrag(e,false,src);if(e.dataTransfer.files[0])handleFile(e.dataTransfer.files[0],src);}
 
@@ -1100,7 +1070,6 @@ function showUploadErr(src,msg){var e=$('upload-error-'+src);e.textContent='⚠ 
 function updateAdminStats(){var stats=[];if(S.partnerRows.length)stats.push('Partner: '+S.partnerRows.length.toLocaleString()+' baris');if(S.agencyRows.length)stats.push('Agency: '+S.agencyRows.length.toLocaleString()+' baris');if(stats.length){$('admin-stats').textContent='Data siap: '+stats.join(' · ')+' · Total: '+(S.partnerRows.length+S.agencyRows.length).toLocaleString()+' baris';}}
 function resetUploads(){S.partnerRows=[];S.agencyRows=[];S.partnerFileName='';S.agencyFileName='';['partner','agency'].forEach(function(src){$('loaded-badge-'+src).classList.add('hidden');$('upload-error-'+src).classList.add('hidden');$('finput-'+src).value='';});$('admin-stats').textContent='';}
 
-// PUBLISH
 async function publishData(){
   var total=(S.partnerRows.length)+(S.agencyRows.length);
   if(!total){toast('Upload minimal satu file terlebih dahulu','error');return;}
@@ -1115,14 +1084,12 @@ async function publishData(){
   btn.disabled=false;btn.innerHTML='<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg> Publish ke Cloud';
   if(ok){$('admin-published-bar').classList.remove('hidden');$('pub-meta').textContent='Files: '+fileNames+' · '+merged.length.toLocaleString()+' baris · '+ts;toast('Data berhasil dipublish! Partner: '+S.partnerRows.length+', Agency: '+S.agencyRows.length,'success');}
 }
-
 async function viewDashboard(){
   showLoading('Memuat data…');var saved=await loadFromStorage();hideLoading();
   if(saved&&saved.rawRows&&saved.rawRows.length){loadSavedData(saved);showScreen('screen-dashboard');}
   else if(S.partnerRows.length||S.agencyRows.length){previewDashboard();}
   else{toast('Tidak ada data — upload terlebih dahulu','error');}
 }
-
 function previewDashboard(){
   if(!S.partnerRows.length&&!S.agencyRows.length){toast('Upload file dulu','error');return;}
   if(S.partnerRows.length)S.currentSource='partner';
@@ -1132,14 +1099,12 @@ function previewDashboard(){
   $('last-update-label').textContent='⚠ Preview lokal — belum dipublish';
   showScreen('screen-dashboard');updateDsCountBadges();setInitialDsTab();
 }
-
 async function clearData(){
   if(!confirm('Hapus semua data yang sudah dipublish?'))return;
   showLoading('Menghapus data…');var ok=await deleteFromStorage();hideLoading();
   if(ok){$('admin-published-bar').classList.add('hidden');toast('Data berhasil dihapus dari cloud','success');}
   else toast('Gagal menghapus data','error');
 }
-
 function loadSavedData(saved){
   var allRows=Array.isArray(saved.rawRows)?saved.rawRows:[];
   S.partnerRows=allRows.filter(function(r){return r._source==='partner'||!r._source;});
@@ -1152,7 +1117,6 @@ function loadSavedData(saved){
   if(saved.publishedAt)$('last-update-label').textContent='Diupdate: '+saved.publishedAt+' · File: '+saved.fileName;
   updateDsCountBadges();setInitialDsTab();
 }
-
 function setInitialDsTab(){
   document.querySelectorAll('.ds-tab').forEach(function(b){b.classList.remove('active');});
   var btn=document.querySelector('.ds-tab.'+S.currentSource);
@@ -1160,7 +1124,6 @@ function setInitialDsTab(){
   var titleEl=$('dash-title');
   if(titleEl)titleEl.innerHTML=S.currentSource==='agency'?'<em>Agency Prepaid</em>':'<em>Partner Prepaid</em>';
 }
-
 function updateDsCountBadges(){
   $('ds-count-partner').textContent=S.partnerRows.length.toLocaleString();
   $('ds-count-agency').textContent=S.agencyRows.length.toLocaleString();
@@ -1172,7 +1135,7 @@ function updateDsCountBadges(){
   if(partnerBtn){if(!S.partnerRows.length){partnerBtn.style.opacity='0.45';partnerBtn.style.pointerEvents='none';partnerBtn.title='Tidak ada data Partner';}else{partnerBtn.style.opacity='';partnerBtn.style.pointerEvents='';partnerBtn.title='';}}
 }
 
-// DATA DETECTION
+// ── DATA DETECTION ──────────────────────────────────────
 function detectMode(){
   if(!S.rawRows.length){S.mode=null;return;}
   var sample=S.rawRows[0];
@@ -1192,7 +1155,6 @@ function detectMode(){
     S.aggregated=buildAggFromAggregated(S.rawRows);
   }
 }
-
 function isRawDataRow(r){
   var m=gstr(r,['program date','month','bulan','periode']).toLowerCase();
   var e=gstr(r,['entity partner','entity','agency name']).toLowerCase();
@@ -1200,7 +1162,6 @@ function isRawDataRow(r){
   if(e.indexOf('total')!==-1||e.indexOf('grand')!==-1)return false;
   return!!(gstr(r,['partner name','nama partner','agency name'])||gstr(r,['project title','project'])||gstr(r,['#req id','req id','#req']));
 }
-
 function buildAggFromRaw(rows){
   var groups={};
   rows.forEach(function(r){
@@ -1223,7 +1184,6 @@ function buildAggFromRaw(rows){
   });
   return Object.values(groups);
 }
-
 function buildAggFromAggregated(rows){
   var out=[];
   rows.forEach(function(r){
@@ -1238,7 +1198,7 @@ function buildAggFromAggregated(rows){
   return out;
 }
 
-// FILTERS
+// ── FILTERS ─────────────────────────────────────────────
 function buildFilters(){
   var months=unique(S.aggregated.map(function(r){return r.month;})).sort(function(a,b){return monthKey(a)-monthKey(b);});
   var entities=unique(S.aggregated.map(function(r){return r.entity;})).sort();
@@ -1261,20 +1221,17 @@ function buildFilters(){
   $('filters').classList.remove('hidden');
   renderHeatmapControls();
 }
-
 function setOpts(id,vals,ph){
   var el=$(id);if(!el)return;
   var cur=el.value;
   el.innerHTML='<option value="">'+esc(ph)+'</option>'+vals.filter(Boolean).map(function(v){return'<option value="'+ea(v)+'"'+(v===cur?' selected':'')+'>'+esc(v)+'</option>';}).join('');
 }
-
 function clearFilters(){
   ['f-month','f-entity','f-partner','f-type','f-status'].forEach(function(id){var el=$(id);if(el)el.value='';});
   $('f-search').value='';$('search-dropdown').classList.add('hidden');SEARCH.activeIdx=-1;
   S.expandedFunnelStage=null;S.expandedDonutStatus=null;S.expandedBottleneckStage=null;S.expandedTopPartner=null;S.rawPage=1;
   render();
 }
-
 function getFiltered(){
   var fm=gv('f-month'),fe=gv('f-entity'),fp=gv('f-partner'),ft=gv('f-type'),fs=gv('f-status');
   var q=(gv('f-search')||'').toLowerCase().trim();
@@ -1296,7 +1253,6 @@ function getFiltered(){
   if(S.mode!=='raw'&&q){agg=agg.filter(function(r){return(r.month||'').toLowerCase().indexOf(q)!==-1||(r.entity||'').toLowerCase().indexOf(q)!==-1||(r.partnerType||'').toLowerCase().indexOf(q)!==-1||(r.type||'').toLowerCase().indexOf(q)!==-1;});}
   return{agg:agg,raw:raw};
 }
-
 function switchTab(tabId,btnEl){
   S.activeTab=tabId;S.rawPage=1;
   document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
@@ -1305,7 +1261,7 @@ function switchTab(tabId,btnEl){
   if(tabId==='rawdata-tab')renderRawDataTable();
 }
 
-// RENDER MAIN
+// ── RENDER MAIN ─────────────────────────────────────────
 function render(){
   if(!S.aggregated.length&&!S.rawRows.length)return;
   var data=getFiltered();
@@ -1318,7 +1274,7 @@ function render(){
   if(S.activeTab==='rawdata-tab')renderRawDataTable();
 }
 
-// KPIs
+// ── KPIs ────────────────────────────────────────────────
 function renderKPIs(data){
   var t=sumAgg(data.agg);
   var months=unique(data.agg.map(function(r){return r.month;})).length;
@@ -1334,9 +1290,8 @@ function renderKPIs(data){
   else{kpis.push({label:'Bulan Aktif',value:months,sub:data.agg.length+' baris data',icon:'<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>'});}
   $('kpis').innerHTML=kpis.map(function(k,i){return'<div class="kpi fade-up d'+Math.min(i,4)+'">'+'<div class="kpi-row"><div class="kpi-label">'+esc(k.label)+'</div><div class="kpi-icon '+(k.cls||'')+'">'+k.icon+'</div></div>'+'<div class="kpi-value">'+k.value+'</div>'+'<div class="kpi-sub">'+(k.sub||'&nbsp;')+'</div></div>';}).join('');
 }
-// ═════════════════════════════════════════════════════
-// FUNNEL
-// ═════════════════════════════════════════════════════
+
+// ── FUNNEL ──────────────────────────────────────────────
 var STAGE_HINTS={po:['po number','po #','no po','po date'],surat:['surat pemberitahuan','surat','notification letter'],invoice:['invoice submission','invoice','invoice date','invoice submision'],clv:['clv date','clv','clv submission'],clearing:['clearing date','clearing bank','clearing']};
 var STAGES_WITH_PO=['invoice','clv','clearing'];
 
@@ -1350,9 +1305,7 @@ function getPendingRecords(stageKey,data){
   var records=missing.map(function(r){return{po:gstr(r,['po number','po #','no po']),partner:gstr(r,['partner name','agency name','nama partner'])||'—',title:gstr(r,['project title','project'])||'',month:gstr(r,['program date','month','bulan','periode']),amount:gnum(r,['amount','nilai']),status:gstr(r,['status','payment status']),source:r._source||'partner'};}).sort(function(a,b){return b.amount-a.amount;});
   return{byMonth:Object.keys(byMonth).map(function(m){return{month:m,count:byMonth[m]};}).sort(function(a,b){return monthKey(b.month)-monthKey(a.month);}),records:records};
 }
-
 function toggleFunnelStage(sk){S.expandedFunnelStage=S.expandedFunnelStage===sk?null:sk;renderFunnel(getFiltered());}
-
 function renderFunnel(data){
   if(!data.agg.length){$('funnel-body').innerHTML=emptyBlk();return;}
   var t=sumAgg(data.agg);
@@ -1377,19 +1330,14 @@ function renderFunnel(data){
   $('funnel-body').innerHTML='<div class="funnel-container">'+svg+legend+'</div>';
 }
 
-// ═════════════════════════════════════════════════════
-// DONUT
-// ═════════════════════════════════════════════════════
+// ── DONUT ───────────────────────────────────────────────
 function isUnpaidStatus(n){if(!n)return true;var s=String(n).toLowerCase();if(s.indexOf('paid')!==-1&&s.indexOf('not paid')===-1&&s.indexOf('unpaid')===-1)return false;return true;}
-
 function getUnpaidRecords(statusName,raw){
   return raw.filter(function(r){return(gstr(r,['status','payment status'])||'Unknown')===statusName;})
     .map(function(r){return{po:gstr(r,['po number','po #','no po']),title:gstr(r,['project title','project'])||gstr(r,['partner name','agency name'])||'—',partner:gstr(r,['partner name','agency name']),month:gstr(r,['program date','month','bulan','periode']),amount:gnum(r,['amount','nilai']),source:r._source||'partner'};})
     .sort(function(a,b){return b.amount-a.amount;});
 }
-
 function toggleDonutStatus(name){S.expandedDonutStatus=S.expandedDonutStatus===name?null:name;renderDonut(getFiltered());}
-
 function renderDonut(data){
   var pieces=[];
   if(S.mode==='raw'){var counts={};(data.raw||[]).forEach(function(r){var s=gstr(r,['status','payment status'])||'Unknown';counts[s]=(counts[s]||0)+1;});var cm={'PAID H+3':'#0e8a73','Payment Process':'#2d7a9c','Invoice Not Submitted':'#e89829','Awaiting Inv Submission':'#c47e1a','On Process Payment':'#7c3aed','Unknown':'#6b716e'};pieces=Object.entries(counts).map(function(e){return{name:e[0],val:e[1],color:cm[e[0]]||'#6b716e',unpaid:isUnpaidStatus(e[0])};});}
@@ -1402,24 +1350,13 @@ function renderDonut(data){
   var legend='<div class="donut-legend">'+pieces.map(function(p){
     var isExp=S.expandedDonutStatus===p.name,canExp=p.unpaid&&S.mode==='raw';
     var detail='';
-    if(canExp&&isExp){
-      var recs=getUnpaidRecords(p.name,data.raw||[]);
-      if(recs.length){
-        detail='<div class="unpaid-detail">'+recs.map(function(rec){
-          return '<div class="unpaid-row">'+(rec.po?'<div class="unpaid-po">'+esc(rec.po)+'</div>':'<div class="unpaid-po empty">no PO</div>')+'<div class="unpaid-title">'+esc(rec.title)+(rec.partner&&rec.partner!==rec.title?'<div class="partner-sub">'+esc(rec.partner)+'</div>':'')+'</div><div class="unpaid-meta">'+esc(rec.month)+(rec.amount?'<span class="unpaid-amount">'+fmtIDR(rec.amount)+'</span>':'')+'</div></div>';
-        }).join('')+'</div>';
-      } else {
-        detail='<div class="unpaid-detail"><div style="padding:12px;text-align:center;font-size:11px;color:var(--muted);">Tidak ada record</div></div>';
-      }
-    }
-    return '<div class="donut-row'+(isExp?' expanded':'')+'"><div class="donut-row-main'+(canExp?' clickable':'')+'"'+(canExp?' onclick="toggleDonutStatus(\''+ea(p.name)+'\');event.stopPropagation()"':'')+'><div class="donut-row-left"><div class="dot" style="background:'+p.color+'"></div><span class="donut-row-name">'+esc(p.name)+'</span></div><div class="donut-row-right"><span class="val">'+p.val.toLocaleString()+'</span><span class="pct">('+Math.round(p.val/total*100)+'%)</span></div><div class="donut-row-chevron'+(canExp?'':' empty')+'">'+(canExp?'▼':'')+'</div></div>'+detail+'</div>';
+    if(canExp&&isExp){var recs=getUnpaidRecords(p.name,data.raw||[]);if(recs.length){detail='<div class="unpaid-detail">'+recs.map(function(rec){return'<div class="unpaid-row">'+(rec.po?'<div class="unpaid-po">'+esc(rec.po)+'</div>':'<div class="unpaid-po empty">no PO</div>')+'<div class="unpaid-title">'+esc(rec.title)+(rec.partner&&rec.partner!==rec.title?'<div class="partner-sub">'+esc(rec.partner)+'</div>':'')+'</div><div class="unpaid-meta">'+esc(rec.month)+(rec.amount?'<span class="unpaid-amount">'+fmtIDR(rec.amount)+'</span>':'')+'</div></div>';}).join('')+'</div>';}else{detail='<div class="unpaid-detail"><div style="padding:12px;text-align:center;font-size:11px;color:var(--muted);">Tidak ada record</div></div>';}}
+    return'<div class="donut-row'+(isExp?' expanded':'')+'"><div class="donut-row-main'+(canExp?' clickable':'')+'"'+(canExp?' onclick="toggleDonutStatus(\''+ea(p.name)+'\');event.stopPropagation()"':'')+'><div class="donut-row-left"><div class="dot" style="background:'+p.color+'"></div><span class="donut-row-name">'+esc(p.name)+'</span></div><div class="donut-row-right"><span class="val">'+p.val.toLocaleString()+'</span><span class="pct">('+Math.round(p.val/total*100)+'%)</span></div><div class="donut-row-chevron'+(canExp?'':' empty')+'">'+(canExp?'▼':'')+'</div></div>'+detail+'</div>';
   }).join('')+'</div>';
   $('donut-body').innerHTML='<div class="donut-wrap">'+svg+legend+'</div>';
 }
 
-// ═════════════════════════════════════════════════════
-// TREND
-// ═════════════════════════════════════════════════════
+// ── TREND ───────────────────────────────────────────────
 function renderTrend(agg){
   if(!agg.length){$('trend-body').innerHTML=emptyBlk();return;}
   var months=unique(agg.map(function(r){return r.month;})).sort(function(a,b){return monthKey(a)-monthKey(b);});
@@ -1435,18 +1372,13 @@ function renderTrend(agg){
   $('trend-body').innerHTML='<svg class="trend-svg" viewBox="0 0 '+W+' '+H+'" preserveAspectRatio="xMidYMid meet">'+grids+mkpath(iv,'#e89829')+mkpath(cv,'#0e8a73')+mkdots(iv,'#e89829')+mkdots(cv,'#0e8a73')+xlabs+'</svg>'+'<div style="display:flex;gap:16px;justify-content:center;margin-top:8px;font-size:12px;"><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:3px;background:#e89829;border-radius:2px;"></div>% Invoice Submitted</div><div style="display:flex;align-items:center;gap:6px;"><div style="width:14px;height:3px;background:#0e8a73;border-radius:2px;"></div>% Cleared Bank</div></div>';
 }
 
-// ═════════════════════════════════════════════════════
-// HEATMAP
-// ═════════════════════════════════════════════════════
+// ── HEATMAP ─────────────────────────────────────────────
 function renderHeatmapControls(){
   var metrics=[{key:'invoice',label:'Invoice',color:'#e89829'},{key:'clv',label:'CLV',color:'#1ea088'},{key:'clearing',label:'Clearing',color:'#0e8a73'}];
   $('heatmap-metric-controls').innerHTML=metrics.map(function(m){return'<button class="heatmap-metric-btn'+(S.heatmapMetric===m.key?' active':'')+'" onclick="setHeatmapMetric(\''+m.key+'\')" style="'+(S.heatmapMetric===m.key?'background:'+m.color+';color:#fff;border-color:'+m.color+';':'')+'" >'+m.label+'</button>';}).join('');
 }
-
 function setHeatmapMetric(metric){S.heatmapMetric=metric;renderHeatmapControls();var data=getFiltered();renderHeatmap(data.agg);}
-
 function heatColor(p){if(p===null||p===undefined)return'var(--surface-2)';if(p>=95)return'#0a6e5b';if(p>=85)return'#0e8a73';if(p>=70)return'#1ea088';if(p>=50)return'#e89829';if(p>=25)return'#c47e1a';if(p>0)return'#a85d10';return'#8b1f1f';}
-
 function renderHeatmap(agg){
   if(!agg.length){$('heatmap-body').innerHTML=emptyBlk();return;}
   var metric=S.heatmapMetric||'clearing';
@@ -1461,27 +1393,40 @@ function renderHeatmap(agg){
   $('heatmap-body').innerHTML='<div class="heatmap-wrap"><table class="heatmap-table"><thead><tr><th>Month</th>'+partners.map(function(p){return'<th>'+esc(p)+'</th>';}).join('')+'</tr></thead><tbody>'+rows+'</tbody></table></div>'+'<div class="heatmap-legend">Scale:<div style="display:flex;gap:2px;">'+[5,30,55,75,88,96].map(function(p){return'<span style="width:24px;height:14px;border-radius:3px;background:'+heatColor(p)+';display:block;" title="'+p+'%"></span>';}).join('')+'</div><span>0% → 100% · Hover untuk detail</span></div>';
 }
 
-// ═════════════════════════════════════════════════════
-// ★ BOTTLENECK — SIMPLIFIED v2 ★
-// ═════════════════════════════════════════════════════
+// ═══════════════════════════════════════════════════════
+// ★ BOTTLENECK — AGENCY vs PARTNER AWARE ★
+// Partner: Reva→PO · PO→Surat · Surat→Invoice · Invoice→CLV · CLV→Clearing
+// Agency:  Req→PO  · PO→Invoice              · Invoice→CLV · CLV→Clearing
+// ═══════════════════════════════════════════════════════
 function toggleBottleneckStage(idx){S.expandedBottleneckStage=S.expandedBottleneckStage===idx?null:idx;renderBottleneck(getFiltered().raw);}
 
 function renderBottleneck(raw){
   if(!raw||!raw.length){$('bottleneck-body').innerHTML=emptyBlk();return;}
   var allMonths=unique(raw.map(function(r){return gstr(r,['program date','month','bulan','periode']);})).length;
 
-  var srcLabel=S.currentSource==='agency'?'Agency Prepaid':'Partner Prepaid';
+  var isAgency=S.currentSource==='agency';
+  var srcLabel=isAgency?'Agency Prepaid':'Partner Prepaid';
+  var slaText=isAgency?'SLA 2/2/2/3 HK':'SLA 2/1/2/2/3 HK';
+
   $('bn-sub').textContent='— Avg vs SLA target · '+srcLabel+' · klik untuk detail case terlama';
 
-  var infoBar='<div class="bn-period-info"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong>'+allMonths+' bulan</strong> · <strong>'+raw.length.toLocaleString()+'</strong> records · <span style="color:var(--primary)">SLA 2/1/2/2/3 HK</span></div>';
+  var infoBar='<div class="bn-period-info"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><strong>'+allMonths+' bulan</strong> · <strong>'+raw.length.toLocaleString()+'</strong> records · <span style="color:var(--primary)">'+slaText+'</span></div>';
 
-  var pairs=[
-    {from:['reva date','reva'],to:['po date','po number','no po'],sla:SLA_DEFINITIONS[0]},
-    {from:['po date','po number'],to:['surat pemberitahuan','surat'],sla:SLA_DEFINITIONS[1]},
-    {from:['surat pemberitahuan','surat'],to:['invoice submission','invoice'],sla:SLA_DEFINITIONS[2]},
-    {from:['invoice submission','invoice'],to:['clv date','clv'],sla:SLA_DEFINITIONS[3]},
-    {from:['clv date','clv'],to:['clearing date','clearing'],sla:SLA_DEFINITIONS[4]},
+  // ── Stage pairs sesuai sumber data ──────────────────
+  var PARTNER_PAIRS=[
+    {from:['reva date','reva'],              to:['po date','po number','no po'],              sla:SLA_DEFINITIONS[0]},
+    {from:['po date','po number'],           to:['surat pemberitahuan','surat'],               sla:SLA_DEFINITIONS[1]},
+    {from:['surat pemberitahuan','surat'],   to:['invoice submission','invoice'],              sla:SLA_DEFINITIONS[2]},
+    {from:['invoice submission','invoice'],  to:['clv date','clv'],                            sla:SLA_DEFINITIONS[3]},
+    {from:['clv date','clv'],               to:['clearing date','clearing bank','clearing'],   sla:SLA_DEFINITIONS[4]},
   ];
+  var AGENCY_PAIRS=[
+    {from:['req date','reva date','reva','request date'], to:['po date','po number','no po'],           sla:SLA_AGENCY[0]},
+    {from:['po date','po number'],                        to:['invoice submission','invoice'],           sla:SLA_AGENCY[1]},
+    {from:['invoice submission','invoice'],               to:['clv date','clv'],                         sla:SLA_AGENCY[2]},
+    {from:['clv date','clv'],                            to:['clearing date','clearing bank','clearing'], sla:SLA_AGENCY[3]},
+  ];
+  var pairs=isAgency?AGENCY_PAIRS:PARTNER_PAIRS;
 
   var results=pairs.map(function(p){
     var details=[];
@@ -1506,21 +1451,17 @@ function renderBottleneck(raw){
     var slaLabel=getSlaLabel(status);
     var isExp=S.expandedBottleneckStage===idx;
     var canExpand=r.details.length>0;
-
-    // Bar scale: 0 → 2×SLA. SLA marker at 50%
     var maxScale=r.sla*2;
     var fillPct=Math.min(100,(r.avg/maxScale)*100);
     var slaMarkerPct=50;
-
     var topSlow=[].concat(r.details).sort(function(a,b){return b.days-a.days;}).slice(0,15);
     var detailHTML='';
     if(isExp&&topSlow.length){
       detailHTML='<div class="bn-detail"><div class="bn-detail-head">Top '+topSlow.length+' case terlama ('+esc(r.label)+') · SLA: '+r.sla+' HK</div><div class="bn-detail-list">'+topSlow.map(function(d){
-        return '<div class="bn-detail-row"><div class="bn-detail-days">'+d.days+'d</div>'+(d.po?'<div class="bn-detail-po">'+esc(d.po)+'</div>':'<div class="bn-detail-po empty">no PO</div>')+'<div class="bn-detail-info"><div class="bn-detail-partner" title="'+ea(d.partner||d.title)+'">'+esc(d.partner||d.title)+'</div>'+(d.title&&d.partner&&d.title!==d.partner?'<div class="bn-detail-sub">'+esc(d.title)+'</div>':'')+'</div><div class="bn-detail-meta">'+esc(d.month)+(d.amount?'<br>'+fmtIDR(d.amount):'')+'</div></div>';
+        return'<div class="bn-detail-row"><div class="bn-detail-days">'+d.days+'d</div>'+(d.po?'<div class="bn-detail-po">'+esc(d.po)+'</div>':'<div class="bn-detail-po empty">no PO</div>')+'<div class="bn-detail-info"><div class="bn-detail-partner" title="'+ea(d.partner||d.title)+'">'+esc(d.partner||d.title)+'</div>'+(d.title&&d.partner&&d.title!==d.partner?'<div class="bn-detail-sub">'+esc(d.title)+'</div>':'')+'</div><div class="bn-detail-meta">'+esc(d.month)+(d.amount?'<br>'+fmtIDR(d.amount):'')+'</div></div>';
       }).join('')+'</div></div>';
     }
-
-    return '<div class="bn-row'+(canExpand?' clickable':'')+(isExp?' expanded':'')+'"'+(canExpand?' onclick="toggleBottleneckStage('+idx+')"':'')+'>'
+    return'<div class="bn-row'+(canExpand?' clickable':'')+(isExp?' expanded':'')+'"'+(canExpand?' onclick="toggleBottleneckStage('+idx+')"':'')+'>'
       +'<div class="bn-row-top">'
       +'<div class="bn-row-label">'+esc(r.label)+(canExpand?' <span class="bn-row-chevron">▼</span>':'')+'</div>'
       +'<div class="bn-row-right">'
@@ -1543,11 +1484,8 @@ function renderBottleneck(raw){
   +'</div>';
 }
 
-// ═════════════════════════════════════════════════════
-// TOP PARTNERS
-// ═════════════════════════════════════════════════════
+// ── TOP PARTNERS ────────────────────────────────────────
 function toggleTopPartner(name){S.expandedTopPartner=S.expandedTopPartner===name?null:name;renderTopPartners(getFiltered().raw);}
-
 function renderTopPartners(raw){
   if(!raw||!raw.length){$('top-partners-body').innerHTML=emptyBlk();return;}
   var agg={};
@@ -1571,9 +1509,7 @@ function renderTopPartners(raw){
   }).join('')+'</div>';
 }
 
-// ═════════════════════════════════════════════════════
-// SUMMARY TABLE
-// ═════════════════════════════════════════════════════
+// ── SUMMARY TABLE ───────────────────────────────────────
 var COLS=[
   {key:'month',label:'Program Date',align:'left'},
   {key:'entity',label:'Entity',align:'left'},
@@ -1589,9 +1525,7 @@ var COLS=[
   {key:'clvPct',label:'%CLV'},
   {key:'clearingPct',label:'%Clearing'},
 ];
-
 function pctBadge(p){var cls=p>=100?'g':p>=80?'a':'r';var icons={g:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 3.8,7.5 8.5,2" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',a:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="2" x2="5" y2="5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="7.5" r="0.8" fill="white"/></svg>',r:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>'};return'<span class="pct '+cls+'"><span class="dot-ico">'+icons[cls]+'</span>'+p+'%</span>';}
-
 function renderTable(agg){
   if(!agg.length){$('tbl-card').innerHTML='<div class="empty-blk" style="padding:4rem;">Tidak ada data — coba sesuaikan filter atau tekan Reset</div>';return;}
   var months=unique(agg.map(function(r){return r.month;})).sort(function(a,b){var diff=monthKey(a)-monthKey(b);return S.sort.dir==='asc'?diff:-diff;});
@@ -1611,20 +1545,15 @@ function renderTable(agg){
   var srcLabel=S.currentSource==='agency'?'Agency Prepaid':'Partner Prepaid';
   $('tbl-card').innerHTML='<div class="tbl-head"><div><div class="tbl-title">Detail '+srcLabel+'</div><div class="tbl-sub">· '+agg.length.toLocaleString()+' baris · '+months.length+' bulan</div></div><div class="tbl-actions"><button class="btn-reset" onclick="toggleAllMonths(this)">'+(allOpen?'Collapse all':'Expand all')+'</button><button class="btn btn-outline" onclick="doExport(\'csv\')" style="font-size:12px;padding:6px 12px;">CSV</button></div></div>'+'<div class="tbl-wrap"><table class="data"><thead><tr>'+ths+'</tr></thead><tbody>'+rows+'</tbody><tfoot>'+footer+'</tfoot></table></div>';
 }
-
 function toggleMonth(m){S.collapsed[m]=!S.collapsed[m];render();}
 function toggleAllMonths(btn){var data=getFiltered(),months=unique(data.agg.map(function(r){return r.month;})),anyOpen=months.some(function(m){return!S.collapsed[m];});months.forEach(function(m){S.collapsed[m]=anyOpen;});if(btn)btn.textContent=anyOpen?'Expand all':'Collapse all';render();}
 function sortBy(col){if(S.sort.col===col)S.sort.dir=S.sort.dir==='asc'?'desc':'asc';else{S.sort.col=col;S.sort.dir='desc';}render();}
 
-// ═════════════════════════════════════════════════════
-// RAW DATA TABLE
-// ═════════════════════════════════════════════════════
+// ── RAW DATA TABLE ──────────────────────────────────────
 var PARTNER_COL_PREF=['entity','status','#req id','req id','po date','po number','remarks','amount','clv date','reva date','partner name','partner type','program date','program type','clearing date','project title','estimation date','invoice submission','surat pemberitahuan'];
 var AGENCY_COL_PREF=['entity','agency name','status','#req id','req id','po date','po number','remarks','amount','clv date','reva date','partner type','program date','program type','clearing date','project title','estimation date','invoice submission','surat pemberitahuan'];
 var DATE_COL_KEYS=['clv date','clv','clearing date','clearing bank','clearing','invoice submission','invoice date','invoice submision','surat pemberitahuan','po date','reva date','estimation date','tanggal'];
-
 function isDateColumnKey(key){var kl=String(key).toLowerCase().replace(/\s+/g,' ').trim();return DATE_COL_KEYS.some(function(d){return kl===d||kl.indexOf(d)!==-1||kl.indexOf('date')!==-1||kl.indexOf('tanggal')!==-1;});}
-
 function getRawCols(){
   var src=S.rawDetails.length?S.rawDetails:S.rawRows;
   if(!src.length)return[];
@@ -1636,7 +1565,6 @@ function getRawCols(){
   keys.forEach(function(k){if(!seen[k]){ordered.push(k);seen[k]=true;}});
   return ordered;
 }
-
 function getFilteredRaw(){
   var rows=S.rawDetails.length?S.rawDetails:S.rawRows;
   var fm=gv('f-month'),fe=gv('f-entity'),fp=gv('f-partner'),ft=gv('f-type'),fs=gv('f-status');
@@ -1651,9 +1579,7 @@ function getFilteredRaw(){
     return true;
   });
 }
-
 function rawSortBy(col){if(S.rawSort.col===col)S.rawSort.dir=S.rawSort.dir==='asc'?'desc':'asc';else{S.rawSort.col=col;S.rawSort.dir='asc';}S.rawPage=1;renderRawDataTable();}
-
 function fmtCellValue(val,key){
   if(val===null||val===undefined||val==='')return'<span class="empty-cell">—</span>';
   if(isDateColumnKey(key)){var d=toDate(val);if(d)return esc(fmtDate(d));}
@@ -1662,9 +1588,7 @@ function fmtCellValue(val,key){
   if(kl==='amount'||kl.indexOf('amount')!==-1||kl==='nilai'){var n=typeof val==='number'?val:parseFloat(String(val).replace(/[^\d.-]/g,''));if(!isNaN(n)&&n!==0)return'<span style="font-family:JetBrains Mono,monospace;font-size:11.5px;">'+esc(fmtIDRFull(n))+'</span>';}
   return esc(String(val));
 }
-
 function isLeftCol(key){var k=String(key).toLowerCase().replace(/\s+/g,'');return k.indexOf('name')!==-1||k.indexOf('title')!==-1||k.indexOf('entity')!==-1||k.indexOf('partnertype')!==-1||k.indexOf('programtype')!==-1||k==='type'||k.indexOf('description')!==-1||k.indexOf('project')!==-1||k==='agencyname'||k==='remarks';}
-
 function renderRawDataTable(){
   var cols=getRawCols();
   if(!cols.length){$('rawdata-card').innerHTML='<div class="empty-blk" style="padding:3rem;">Upload file untuk melihat raw data</div>';return;}
@@ -1684,41 +1608,20 @@ function renderRawDataTable(){
     +'</select><button class="btn btn-outline" onclick="exportRawData()" style="font-size:12px;padding:6px 12px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>Export Raw</button></div></div>'
     +'<div class="tbl-wrap"><table class="data" style="font-size:12px;"><thead><tr>'+ths+'</tr></thead><tbody>'+tbody+'</tbody></table></div>'+pagCtrl;
 }
-
 function goRawPage(pg){var rows=getFilteredRaw(),totalPages=Math.max(1,Math.ceil(rows.length/S.rawPageSize));S.rawPage=Math.max(1,Math.min(pg,totalPages));renderRawDataTable();var el=$('rawdata-card');if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
 
-// ═════════════════════════════════════════════════════
-// EXPORT
-// ═════════════════════════════════════════════════════
+// ── EXPORT ──────────────────────────────────────────────
 function exportRawData(){
   var rows=getFilteredRaw();
   if(!rows.length){toast('Tidak ada data untuk diexport','error');return;}
   var cols=getRawCols();
-  var exportRows=rows.map(function(r){
-    var out={};
-    cols.forEach(function(c){
-      var val=r[c];
-      if(val===null||val===undefined||val===''){out[c]='';return;}
-      if(isDateColumnKey(c)){var d=toDate(val);if(d){out[c]=d;return;}}
-      out[c]=val;
-    });
-    return out;
-  });
+  var exportRows=rows.map(function(r){var out={};cols.forEach(function(c){var val=r[c];if(val===null||val===undefined||val===''){out[c]='';return;}if(isDateColumnKey(c)){var d=toDate(val);if(d){out[c]=d;return;}}out[c]=val;});return out;});
   var wb=XLSX.utils.book_new();
   var ws=XLSX.utils.json_to_sheet(exportRows,{cellDates:true});
   var range=XLSX.utils.decode_range(ws['!ref']||'A1');
   var headers=[];
   for(var C=range.s.c;C<=range.e.c;C++){var cell=ws[XLSX.utils.encode_cell({r:0,c:C})];if(cell)headers[C]=cell.v;}
-  for(var R=1;R<=range.e.r;R++){
-    for(var C=range.s.c;C<=range.e.c;C++){
-      var hdr=headers[C];
-      if(hdr&&isDateColumnKey(String(hdr))){
-        var cellRef=XLSX.utils.encode_cell({r:R,c:C});
-        var cell=ws[cellRef];
-        if(cell&&cell.t==='d'){cell.z='DD-MMM-YY';}
-      }
-    }
-  }
+  for(var R=1;R<=range.e.r;R++){for(var C=range.s.c;C<=range.e.c;C++){var hdr=headers[C];if(hdr&&isDateColumnKey(String(hdr))){var cellRef=XLSX.utils.encode_cell({r:R,c:C});var cell=ws[cellRef];if(cell&&cell.t==='d'){cell.z='DD-MMM-YY';}}}}
   var colWidths=cols.map(function(c){var kl=String(c).toLowerCase();if(kl.indexOf('name')!==-1||kl.indexOf('title')!==-1||kl.indexOf('project')!==-1)return{wch:30};if(kl.indexOf('date')!==-1||kl.indexOf('submission')!==-1||kl.indexOf('clearing')!==-1||kl.indexOf('clv')!==-1)return{wch:14};if(kl.indexOf('amount')!==-1||kl.indexOf('nilai')!==-1)return{wch:18};if(kl.indexOf('po number')!==-1||kl.indexOf('po #')!==-1)return{wch:16};if(kl.indexOf('status')!==-1)return{wch:22};if(kl.indexOf('entity')!==-1)return{wch:8};return{wch:14};});
   ws['!cols']=colWidths;
   var sheetName=S.currentSource==='agency'?'Agency Raw':'Partner Raw';
@@ -1726,7 +1629,6 @@ function exportRawData(){
   XLSX.writeFile(wb,(S.currentSource==='agency'?'agency':'partner')+'_raw_'+new Date().toISOString().slice(0,10)+'.xlsx');
   toast('Raw data ('+rows.length.toLocaleString()+' baris) diunduh!','success');
 }
-
 function doExport(format){
   var data=getFiltered();
   if(!data.agg.length){toast('Tidak ada data untuk diexport','error');return;}
@@ -1758,9 +1660,7 @@ function doExport(format){
   }
 }
 
-// ═════════════════════════════════════════════════════
-// THEME, PRINT, SWITCH MODE & INIT
-// ═════════════════════════════════════════════════════
+// ── THEME, PRINT, SWITCH MODE & INIT ───────────────────
 var _savedTheme=localStorage.getItem('ppt-theme')||'light';
 document.documentElement.setAttribute('data-theme',_savedTheme);
 $('btn-theme').onclick=function(){var cur=document.documentElement.getAttribute('data-theme'),next=cur==='dark'?'light':'dark';document.documentElement.setAttribute('data-theme',next);try{localStorage.setItem('ppt-theme',next);}catch(e){}};
