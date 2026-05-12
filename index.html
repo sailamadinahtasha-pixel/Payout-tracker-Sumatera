@@ -11,7 +11,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root{--primary:#0e8a73;--primary-dark:#0a6e5b;--primary-light:#e6f4f0;--accent:#e89829;--accent-dark:#c47e1a;--ink:#0f1419;--ink-2:#2a2f33;--paper:#fafaf7;--surface:#ffffff;--surface-2:#f5f6f3;--line:#e5e8e5;--line-2:#d0d4d0;--muted:#6b716e;--muted-2:#9ca29f;--good:#15803d;--good-bg:#dcfce7;--warn:#b45309;--warn-bg:#fef3c7;--bad:#b91c1c;--bad-bg:#fee2e2;--info:#0369a1;--info-bg:#dbeafe;--partner-color:#0e8a73;--agency-color:#7c3aed;--agency-light:#ede9fe;--shadow-sm:0 1px 2px rgba(15,20,25,0.04);--shadow:0 1px 3px rgba(15,20,25,0.06),0 1px 2px rgba(15,20,25,0.04);--shadow-lg:0 10px 25px -8px rgba(15,20,25,0.12),0 4px 10px -4px rgba(15,20,25,0.08)}
-[data-theme="dark"]{--primary:#2db89c;--primary-dark:#1f9a82;--primary-light:#0f2a25;--accent:#f0a945;--accent-dark:#d4892a;--ink:#e8eaed;--ink-2:#d0d3d6;--paper:#0a0f0c;--surface:#141917;--surface-2:#1c221f;--line:#2a302d;--line-2:#3a413d;--muted:#8a918d;--muted-2:#616764;--good:#4ade80;--good-bg:#0f2e1d;--warn:#fbbf24;--warn-bg:#2e2208;--bad:#f87171;--bad-bg:#2e1010;--info:#38bdf8;--info-bg:#0c1e2e;--partner-color:#2db89c;--agency-color:#a78bfa;--agency-light:#1e1a2e}
+[data-theme="dark"]{--primary:#2db89c;--primary-dark:#1f9a82;--primary-light:#0f2a25;--accent:#f0a945;--accent-dark:#d4892a;--ink:#e8eaed;--ink-2:#d0d3d6;--paper:#0a0f0c;--surface:#141917;--surface-2:#1c221f;--line:#2a302d;--line-2:#3a413d;--muted:#8a918d;--muted-2:#616764;--good:#22c55e;--good-bg:#0f2e1d;--warn:#f59e0b;--warn-bg:#2e2208;--bad:#f87171;--bad-bg:#2e1010;--info:#38bdf8;--info-bg:#0c1e2e;--partner-color:#2db89c;--agency-color:#a78bfa;--agency-light:#1e1a2e}
 
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
@@ -412,11 +412,26 @@ table.data tr.grand-total td{background:var(--ink);color:#fff;font-weight:700;bo
 #rawdata-card table.data{table-layout:auto;min-width:800px}
 #rawdata-card table.data thead th{width:auto}
 
-.pct{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:600;font-family:'JetBrains Mono',monospace}
-.dot-ico{width:17px;height:17px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
-.pct.g{color:var(--good)}.pct.g .dot-ico{background:var(--good)}
-.pct.a{color:var(--warn)}.pct.a .dot-ico{background:var(--warn)}
-.pct.r{color:var(--bad)}.pct.r .dot-ico{background:var(--bad)}
+.pct{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;font-family:'JetBrains Mono',monospace}
+.dot-ico{width:18px;height:18px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 1px 3px rgba(0,0,0,0.18)}
+/* SEMUA ROW pakai warna cerah seragam — sama dengan Grand Total */
+.pct.g{color:#16a34a}.pct.g .dot-ico{background:#22c55e}
+.pct.a{color:#d97706}.pct.a .dot-ico{background:#f59e0b}
+.pct.r{color:#dc2626}.pct.r .dot-ico{background:#f87171}
+/* Grand total dark row — teks lebih terang agar terbaca di bg hitam */
+tr.grand-total .pct.g{color:#4ade80}
+tr.grand-total .pct.g .dot-ico{background:#22c55e}
+tr.grand-total .pct.a{color:#fbbf24}
+tr.grand-total .pct.a .dot-ico{background:#f59e0b}
+tr.grand-total .pct.r{color:#f87171}
+tr.grand-total .pct.r .dot-ico{background:#f87171}
+/* Month total row — sama dengan regular */
+tr.month-total .pct.g{color:#16a34a}
+tr.month-total .pct.g .dot-ico{background:#22c55e}
+tr.month-total .pct.a{color:#d97706}
+tr.month-total .pct.a .dot-ico{background:#f59e0b}
+tr.month-total .pct.r{color:#dc2626}
+tr.month-total .pct.r .dot-ico{background:#f87171}
 
 .empty-blk{text-align:center;padding:3rem 2rem;color:var(--muted);font-size:13px}
 
@@ -894,7 +909,7 @@ function gcell(row,hints,fb){var key=findCol(row,hints);if(!key)return fb!==unde
 function gnum(row,hints){var v=gcell(row,hints,0);if(typeof v==='number')return v;var n=parseFloat(String(v).replace(/[^\d.-]/g,''));return isNaN(n)?0:n;}
 function gstr(row,hints){return String(gcell(row,hints,'')||'').trim();}
 function pct(a,b){return b?Math.round((a/b)*100):0;}
-function pctClass(p){return p>=95?'good':p>=70?'warn':'bad';}
+function pctClass(p){return p>=100?'good':p>=1?'warn':'bad';}
 function emptyBlk(msg){return '<div class="empty-blk">'+(msg?esc(msg):'Tidak ada data')+'</div>';}
 function sumAgg(rows){return rows.reduce(function(a,r){return{partner:a.partner+(r.partner||0),po:a.po+(r.po||0),surat:a.surat+(r.surat||0),invoice:a.invoice+(r.invoice||0),clv:a.clv+(r.clv||0),clearing:a.clearing+(r.clearing||0),amount:a.amount+(r.amount||0)};},{partner:0,po:0,surat:0,invoice:0,clv:0,clearing:0,amount:0});}
 
@@ -1525,7 +1540,16 @@ var COLS=[
   {key:'clvPct',label:'%CLV'},
   {key:'clearingPct',label:'%Clearing'},
 ];
-function pctBadge(p){var cls=p>=100?'g':p>=80?'a':'r';var icons={g:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 3.8,7.5 8.5,2" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',a:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="2" x2="5" y2="5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="7.5" r="0.8" fill="white"/></svg>',r:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>'};return'<span class="pct '+cls+'"><span class="dot-ico">'+icons[cls]+'</span>'+p+'%</span>';}
+function pctBadge(p){
+  // Rule: ≥100% → green (✓) · 1–99% → orange (!) · 0% → red (✗)
+  var cls=p>=100?'g':p>=1?'a':'r';
+  var icons={
+    g:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><polyline points="1.5,5 3.8,7.5 8.5,2" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    a:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="5" y1="2" x2="5" y2="5.5" stroke="white" stroke-width="1.5" stroke-linecap="round"/><circle cx="5" cy="7.5" r="0.8" fill="white"/></svg>',
+    r:'<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><line x1="2.5" y1="2.5" x2="7.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/><line x1="7.5" y1="2.5" x2="2.5" y2="7.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/></svg>'
+  };
+  return'<span class="pct '+cls+'"><span class="dot-ico">'+icons[cls]+'</span>'+p+'%</span>';
+}
 function renderTable(agg){
   if(!agg.length){$('tbl-card').innerHTML='<div class="empty-blk" style="padding:4rem;">Tidak ada data — coba sesuaikan filter atau tekan Reset</div>';return;}
   var months=unique(agg.map(function(r){return r.month;})).sort(function(a,b){var diff=monthKey(a)-monthKey(b);return S.sort.dir==='asc'?diff:-diff;});
